@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c51a7fe6kgkky"]
 
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Characters/玩家角色_动画.tscn" id="1_080ot"]
-[ext_resource type="Texture2D" uid="uid://cvmeaa3kona40" path="res://Assets/images/Background/Gray.png" id="1_itb58"]
+[ext_resource type="Texture2D" uid="uid://croi3w8v8p183" path="res://Assets/images/Background/Brown.png" id="1_itb58"]
 [ext_resource type="PackedScene" uid="uid://y14gododukis" path="res://TileMaps/地面.tscn" id="2_ixedx"]
+[ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://CheckPoint/检查点.tscn" id="4_sn356"]
 
 [node name="关卡1" type="Node2D" unique_id=1542376960]
 
@@ -13,8 +14,11 @@ texture = ExtResource("1_itb58")
 stretch_mode = 1
 
 [node name="Player" parent="." unique_id=538243393 instance=ExtResource("1_080ot")]
-position = Vector2(431, 271)
+position = Vector2(55, 618)
 
 [node name="TileMap" parent="." unique_id=969291628 instance=ExtResource("2_ixedx")]
-position = Vector2(2, 613)
+position = Vector2(4, 673)
 metadata/_edit_group_ = true
+
+[node name="检查点" parent="." unique_id=1464177802 instance=ExtResource("4_sn356")]
+position = Vector2(1204, 273)

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://y22b5dvyhc3b"]
+
+[ext_resource type="Texture2D" uid="uid://b386g2dm2pj8a" path="res://Assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="1_gjb8s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmq54"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlx1g"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbpdd"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bptex"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqeru"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnunp"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tylx"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfcjf"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82uvm"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifmde"]
+atlas = ExtResource("1_gjb8s")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wls6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmq54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlx1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbpdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bptex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqeru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnunp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tylx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfcjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82uvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifmde")
+}],
+"loop": true,
+"name": &"Wave",
+"speed": 20.0
+}]
+
+[node name="检查点" type="Node2D" unique_id=1712424249]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1861835675]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wls6s")
+animation = &"Wave"
+autoplay = "Wave"
+frame = 3
+frame_progress = 0.11125641
