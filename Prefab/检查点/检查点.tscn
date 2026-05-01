@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://y22b5dvyhc3b"]
 
 [ext_resource type="Texture2D" uid="uid://b386g2dm2pj8a" path="res://Assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="1_gjb8s"]
+[ext_resource type="Script" uid="uid://bauds7ctnn7x7" path="res://addons/LevelManeger/加载关卡.gd" id="2_nm2ul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmq54"]
 atlas = ExtResource("1_gjb8s")
@@ -80,7 +81,11 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="检查点" type="Node2D" unique_id=1712424249]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm2ul"]
+size = Vector2(68, 96)
+
+[node name="检查点" type="Area2D" unique_id=1450161505]
+script = ExtResource("2_nm2ul")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1861835675]
 scale = Vector2(2, 2)
@@ -89,3 +94,7 @@ animation = &"Wave"
 autoplay = "Wave"
 frame = 3
 frame_progress = 0.11125641
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018273571]
+position = Vector2(5, 12)
+shape = SubResource("RectangleShape2D_nm2ul")
