@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dd7gvmb0pxb1w" path="res://Assets/images/Background/Green.png" id="1_v1m07"]
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色_动画.tscn" id="2_yxub4"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="3_s0p5p"]
+[ext_resource type="PackedScene" uid="uid://tixvvhxlonyt" path="res://Prefab/TileMaps/棕地面.tscn" id="4_yxub4"]
 
 [node name="关卡2" type="Node2D" unique_id=1542376960]
 
@@ -16,4 +17,7 @@ stretch_mode = 1
 position = Vector2(55, 618)
 
 [node name="检查点" parent="." unique_id=1464177802 instance=ExtResource("3_s0p5p")]
-position = Vector2(1204, 273)
+position = Vector2(1094, 50)
+next_level = "uid://c51a7fe6kgkky"
+
+[node name="地面" parent="." unique_id=355482530 instance=ExtResource("4_yxub4")]
