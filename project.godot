@@ -21,6 +21,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/initial_position=Vector2i(640, 360)
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/LevelManeger/plugin.cfg")
+
 [input]
 
 left={
