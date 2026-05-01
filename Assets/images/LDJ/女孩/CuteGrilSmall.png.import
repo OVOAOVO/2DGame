@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm7ep68yoyter"
-path="res://.godot/imported/CuteGril.png-67108a11e60b37b868bf98bb191e7ca5.ctex"
+uid="uid://tvykkta6vex1"
+path="res://.godot/imported/CuteGrilSmall.png-338c1a902e5e1848f9fff509e49f9382.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/LDJ/CuteGril.png"
-dest_files=["res://.godot/imported/CuteGril.png-67108a11e60b37b868bf98bb191e7ca5.ctex"]
+source_file="res://Assets/images/LDJ/女孩/CuteGrilSmall.png"
+dest_files=["res://.godot/imported/CuteGrilSmall.png-338c1a902e5e1848f9fff509e49f9382.ctex"]
 
 [params]
 

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bpciffo2em6tg"]
+
+[ext_resource type="Texture2D" uid="uid://c4njteie0ilhi" path="res://Assets/images/LDJ/小骑士/Idle(32x32).png" id="1_c2fxb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yegek"]
+atlas = ExtResource("1_c2fxb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_initl"]
+atlas = ExtResource("1_c2fxb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa4py"]
+atlas = ExtResource("1_c2fxb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrnog"]
+atlas = ExtResource("1_c2fxb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucpct"]
+atlas = ExtResource("1_c2fxb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wckp8"]
+atlas = ExtResource("1_c2fxb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0bn6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yegek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_initl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa4py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrnog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucpct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wckp8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="测试角色" type="CharacterBody2D" unique_id=2085705597]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=525583063]
+sprite_frames = SubResource("SpriteFrames_y0bn6")
+animation = &"Idle"
+frame_progress = 0.2788322
