@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="PlatformJumpDemo"
-run/main_scene="uid://c51a7fe6kgkky"
+config/name="Demo"
+run/main_scene="uid://bk5fpvjyrjf0i"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
