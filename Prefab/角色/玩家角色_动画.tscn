@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://v1kmxdsi3t81" path="res://Assets/images/Pink Man/Idle (32x32).png" id="1_uyb8x"]
 [ext_resource type="Texture2D" uid="uid://dp8iko0a7ma5f" path="res://Assets/images/Pink Man/Jump (32x32).png" id="3_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cmgy0elgamj1y" path="res://Assets/images/Pink Man/Run (32x32).png" id="4_un6cx"]
-[ext_resource type="AudioStream" uid="uid://chdovhnwyrv1f" path="res://Assets/sounds/jump.wav" id="6_oq8l4"]
+[ext_resource type="AudioStream" uid="uid://cgm1763ygod3n" path="res://Assets/sounds/Jump_new.wav" id="6_fcw5n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oq8l4"]
 atlas = ExtResource("1_uyb8x")
@@ -212,4 +212,4 @@ position = Vector2(0.16666651, 1.6666664)
 shape = SubResource("RectangleShape2D_nfgnx")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=591649179]
-stream = ExtResource("6_oq8l4")
+stream = ExtResource("6_fcw5n")
