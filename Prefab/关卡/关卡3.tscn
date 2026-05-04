@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bhaem6iuvyq5h"]
+
+[ext_resource type="Texture2D" uid="uid://ceevsttadwe8r" path="res://Assets/images/Background/Blue.png" id="1_4iob6"]
+[ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色_动画.tscn" id="2_dujvp"]
+[ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="3_8gsiq"]
+[ext_resource type="PackedScene" uid="uid://cab1a7b0uqwbd" path="res://Prefab/TileMaps/奶昔地面.tscn" id="4_4iob6"]
+
+[node name="关卡3" type="Node2D" unique_id=1340482594]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1511394972]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_4iob6")
+stretch_mode = 1
+
+[node name="Player" parent="." unique_id=538243393 instance=ExtResource("2_dujvp")]
+position = Vector2(55, 618)
+
+[node name="检查点" parent="." unique_id=1450161505 instance=ExtResource("3_8gsiq")]
+position = Vector2(438, 88)
+next_level = "uid://c51a7fe6kgkky"
+
+[node name="奶昔地面" parent="." unique_id=1699864916 instance=ExtResource("4_4iob6")]
