@@ -1,10 +1,18 @@
 extends CharacterBody2D
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var animated_sprite_2d: AnimatedSprite2D =  get_node("AnimatedSprite2D")
+@onready var jump_sound: AudioStreamPlayer2D = get_node("JumpSound")
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -850.0
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if jump_sound == null:
+		print("AudioStreamPlayer2D is NULLL!")
+		return
+	if animated_sprite_2d == null:
+		print("AnimatedSprite2D is NULLL!")
+		return
 
 func _physics_process(delta: float) -> void:
 

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cwppilgl4xlc4"]
+
+[ext_resource type="Texture2D" uid="uid://dku1g34w8tgib" path="res://Assets/images/LDJ/尖头小绿怪/Idle(32x32).png" id="1_sina8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1tsq"]
+atlas = ExtResource("1_sina8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikc8i"]
+atlas = ExtResource("1_sina8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrfsi"]
+atlas = ExtResource("1_sina8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbau3"]
+atlas = ExtResource("1_sina8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl2kd"]
+atlas = ExtResource("1_sina8")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt2cl"]
+atlas = ExtResource("1_sina8")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8alr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1tsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikc8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrfsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbau3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl2kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt2cl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bmcj"]
+size = Vector2(20.333334, 29.333334)
+
+[node name="尖头小绿怪" type="CharacterBody2D" unique_id=805310368]
+scale = Vector2(2.5, 2.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=708479248]
+sprite_frames = SubResource("SpriteFrames_m8alr")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.521824
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1632066639]
+position = Vector2(-1.2, -2.9802322e-08)
+shape = SubResource("RectangleShape2D_8bmcj")
