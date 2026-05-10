@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://v1kmxdsi3t81" path="res://Assets/images/Pink Man/Idle (32x32).png" id="1_uyb8x"]
 [ext_resource type="Texture2D" uid="uid://dp8iko0a7ma5f" path="res://Assets/images/Pink Man/Jump (32x32).png" id="3_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cmgy0elgamj1y" path="res://Assets/images/Pink Man/Run (32x32).png" id="4_un6cx"]
+[ext_resource type="Texture2D" uid="uid://cngjfjfc37vex" path="res://Assets/images/Pink Man/Hit (32x32).png" id="6_227gi"]
 [ext_resource type="Script" uid="uid://ce66i4gf5g6bd" path="res://GDScripts/玩家/玩家动画切换.gd" id="6_csbx2"]
 [ext_resource type="AudioStream" uid="uid://cgm1763ygod3n" path="res://Assets/sounds/Jump_new.wav" id="6_fcw5n"]
 [ext_resource type="Script" uid="uid://dky01sx8812y7" path="res://GDScripts/玩家/玩家收击与碰撞.gd" id="7_2p2l7"]
@@ -101,6 +102,34 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("4_un6cx")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6oc6"]
+atlas = ExtResource("6_227gi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6q0w"]
+atlas = ExtResource("6_227gi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxsxf"]
+atlas = ExtResource("6_227gi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tynam"]
+atlas = ExtResource("6_227gi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnaal"]
+atlas = ExtResource("6_227gi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gijc8"]
+atlas = ExtResource("6_227gi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1fui"]
+atlas = ExtResource("6_227gi")
+region = Rect2(192, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_78025"]
 animations = [{
 "frames": [{
@@ -194,6 +223,32 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6oc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6q0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxsxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tynam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnaal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gijc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1fui")
+}],
+"loop": false,
+"name": &"Touch_Enemy",
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfgnx"]
@@ -209,7 +264,7 @@ script = ExtResource("1_nfgnx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1597771471]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_78025")
-animation = &"Idle"
+animation = &"Fall"
 autoplay = "Idle"
 script = ExtResource("6_csbx2")
 
@@ -221,7 +276,7 @@ shape = SubResource("RectangleShape2D_nfgnx")
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=591649179]
 stream = ExtResource("6_fcw5n")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1655812638 groups=["Enemy", "Player"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=1655812638 groups=["Player"]]
 script = ExtResource("7_2p2l7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=602217970]

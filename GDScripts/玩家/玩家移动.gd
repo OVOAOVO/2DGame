@@ -30,6 +30,5 @@ func _physics_process(delta):
 		abs(velocity.x) > 1,
 		velocity.y < 0,
 		velocity.y > 0 and not is_on_floor(),
-		velocity,
 		direction
 	)
