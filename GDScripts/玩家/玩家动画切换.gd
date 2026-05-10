@@ -1,6 +1,12 @@
 extends AnimatedSprite2D
 
-var is_hitting = false
+enum AnimState {
+	NORMAL,
+	Touched_Enemy,
+	ATTACK
+}
+
+var anim_state = AnimState.NORMAL
 
 func _ready():
 	get_parent().connect("move_state_changed", _on_move_state_changed)
@@ -8,7 +14,8 @@ func _ready():
 
 func _on_move_state_changed(is_run, is_jump, is_fall, dir):
 
-	if is_hitting:
+	# 特殊动画锁
+	if anim_state != AnimState.NORMAL:
 		return
 
 	if is_jump:
@@ -20,13 +27,20 @@ func _on_move_state_changed(is_run, is_jump, is_fall, dir):
 	else:
 		play("Idle")
 
-	# 直接用自己
 	if dir != 0:
 		flip_h = dir < 0
 
+
 func _on_touch_enemy():
-	print("收到 hit 信号")
-	is_hitting = true
+
+	# 已经在受击了就别重复播
+	if anim_state == AnimState.Touched_Enemy:
+		return
+
+	anim_state = AnimState.Touched_Enemy
+
 	play("Touch_Enemy")
+
 	await animation_finished
-	is_hitting = false
+
+	anim_state = AnimState.NORMAL
