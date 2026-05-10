@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色_动画.tscn" id="2_8oahv"]
 [ext_resource type="PackedScene" uid="uid://y14gododukis" path="res://Prefab/TileMaps/草地面.tscn" id="3_2rln6"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="4_8h8fo"]
+[ext_resource type="PackedScene" uid="uid://oid5gyah2wbn" path="res://Prefab/敌人/蜗牛.tscn" id="6_2rln6"]
 [ext_resource type="PackedScene" uid="uid://cwppilgl4xlc4" path="res://Prefab/敌人/尖头小绿怪.tscn" id="6_8h8fo"]
 
 [node name="关卡1" type="Node2D" unique_id=1542376960]
@@ -28,3 +29,7 @@ next_level = "uid://bmbth1rc7pmut"
 
 [node name="尖头小绿怪" parent="Enemies" unique_id=666808917 instance=ExtResource("6_8h8fo")]
 position = Vector2(514, 635.00006)
+
+[node name="蜗牛" parent="Enemies" unique_id=1714253583 instance=ExtResource("6_2rln6")]
+position = Vector2(761.00006, 645)
+face_right = false

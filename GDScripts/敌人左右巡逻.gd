@@ -7,6 +7,9 @@ extends Node2D
 const  SPEED = 100.0
 var direction = -1.0
 
+# 👉 新增：初始是否面向右
+@export var face_right: bool = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if timer == null:
@@ -17,7 +20,15 @@ func _ready() -> void:
 		return
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
-	animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
+	
+	# 根据初始朝向设置 direction 和 flip
+	if face_right:
+		direction = -1.0
+		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
+	else:
+		direction = 1.0
+		animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
+
 func _process(delta):
 	position.x += direction * SPEED * delta
 

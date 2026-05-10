@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbr4auhahxv0c" path="res://GDScripts/敌人左右巡逻.gd" id="1_cvjj1"]
 [ext_resource type="Texture2D" uid="uid://d3knjyubwxgr4" path="res://Assets/images/Snail/Walk (38x24).png" id="1_idhl1"]
+[ext_resource type="Script" uid="uid://c4b0gfe3haeal" path="res://GDScripts/控制敌人收击与碰撞.gd" id="2_7wlmr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvjj1"]
 atlas = ExtResource("1_idhl1")
@@ -87,24 +88,30 @@ size = Vector2(34, 14)
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrogf"]
 radius = 11.0
 
-[node name="蜗牛" type="Area2D" unique_id=1237957607]
+[node name="蜗牛" type="Node2D" unique_id=1714253583]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_cvjj1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=229735696]
+[node name="Area2D" type="Area2D" parent="." unique_id=1119350810]
+script = ExtResource("2_7wlmr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=229735696]
+scale = Vector2(0.99999994, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_s1g7e")
 animation = &"Run"
 autoplay = "Run"
 frame = 6
 frame_progress = 0.76913524
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=160222732]
-position = Vector2(2, 4)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=160222732]
+position = Vector2(1.9999999, 3.9999998)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_u8a1j")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1178885304]
-position = Vector2(6, 0)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1178885304]
+position = Vector2(5.9999995, 0)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_wrogf")
 
-[node name="Timer" type="Timer" parent="." unique_id=999034530]
+[node name="Timer" type="Timer" parent="Area2D" unique_id=999034530]
 wait_time = 2.0
