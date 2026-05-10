@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://oid5gyah2wbn"]
 
-[ext_resource type="Script" uid="uid://cbr4auhahxv0c" path="res://GDScripts/敌人左右巡逻.gd" id="1_cvjj1"]
+[ext_resource type="Script" uid="uid://cbr4auhahxv0c" path="res://GDScripts/敌人/敌人左右巡逻.gd" id="1_cvjj1"]
 [ext_resource type="Texture2D" uid="uid://d3knjyubwxgr4" path="res://Assets/images/Snail/Walk (38x24).png" id="1_idhl1"]
-[ext_resource type="Script" uid="uid://c4b0gfe3haeal" path="res://GDScripts/控制敌人收击与碰撞.gd" id="2_7wlmr"]
+[ext_resource type="Script" uid="uid://c4b0gfe3haeal" path="res://GDScripts/敌人/敌人收击与碰撞.gd" id="2_7wlmr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvjj1"]
 atlas = ExtResource("1_idhl1")
@@ -92,7 +92,7 @@ radius = 11.0
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_cvjj1")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1119350810]
+[node name="Area2D" type="Area2D" parent="." unique_id=1119350810 groups=["Enemy"]]
 script = ExtResource("2_7wlmr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=229735696]

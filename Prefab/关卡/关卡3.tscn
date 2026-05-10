@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhaem6iuvyq5h"]
 
 [ext_resource type="Texture2D" uid="uid://ceevsttadwe8r" path="res://Assets/images/Background/Blue.png" id="1_4iob6"]
-[ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色_动画.tscn" id="2_dujvp"]
+[ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="2_dujvp"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="3_8gsiq"]
 [ext_resource type="PackedScene" uid="uid://cab1a7b0uqwbd" path="res://Prefab/TileMaps/奶昔地面.tscn" id="4_4iob6"]
 

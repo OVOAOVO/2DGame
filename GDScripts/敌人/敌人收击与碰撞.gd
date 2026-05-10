@@ -10,8 +10,8 @@ func _ready() -> void:
 
 
 func _on_body_entered(body):
-		print("碰到玩家了")
-
+	if body.name == "Player":
+		print("guaaa")
 
 # func _on_area_entered(other_area):
 #		print("敌人被攻击了")

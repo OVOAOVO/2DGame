@@ -30,6 +30,11 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/LevelManeger/plugin.cfg")
 
+[global_group]
+
+Player="玩家"
+Enemy="敌人"
+
 [input]
 
 left={
