@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://v1kmxdsi3t81" path="res://Assets/images/Pink Man/Idle (32x32).png" id="1_uyb8x"]
 [ext_resource type="Texture2D" uid="uid://dp8iko0a7ma5f" path="res://Assets/images/Pink Man/Jump (32x32).png" id="3_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cmgy0elgamj1y" path="res://Assets/images/Pink Man/Run (32x32).png" id="4_un6cx"]
+[ext_resource type="Script" uid="uid://ce66i4gf5g6bd" path="res://GDScripts/玩家/玩家动画切换.gd" id="6_csbx2"]
 [ext_resource type="AudioStream" uid="uid://cgm1763ygod3n" path="res://Assets/sounds/Jump_new.wav" id="6_fcw5n"]
 [ext_resource type="Script" uid="uid://dky01sx8812y7" path="res://GDScripts/玩家/玩家收击与碰撞.gd" id="7_2p2l7"]
 
@@ -210,6 +211,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_78025")
 animation = &"Idle"
 autoplay = "Idle"
+script = ExtResource("6_csbx2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392394083]
 position = Vector2(0.1666665, 1.4666662)
