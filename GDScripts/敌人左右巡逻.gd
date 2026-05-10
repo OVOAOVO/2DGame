@@ -1,7 +1,8 @@
-extends Area2D
+extends Node2D
 
-@onready var timer: Timer = get_node("Timer")
-@onready var animated_sprite_2d: AnimatedSprite2D = get_node("AnimatedSprite2D")
+@onready var area = $Area2D
+@onready var timer: Timer = $Area2D/Timer
+@onready var animated_sprite_2d: AnimatedSprite2D = $Area2D/AnimatedSprite2D
 
 const  SPEED = 100.0
 var direction = -1.0
@@ -16,7 +17,7 @@ func _ready() -> void:
 		return
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
-
+	animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
 func _process(delta):
 	position.x += direction * SPEED * delta
 
