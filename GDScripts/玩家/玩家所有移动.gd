@@ -5,7 +5,9 @@ extends CharacterBody2D
 
 signal move_state_changed(is_running, is_jumping, is_falling, velocity, direction)
 
-@onready var hurtbox = $Area2D
+@onready var hurtbox = $HurtBox
+@onready var attack_box = $AttackBox
+var curfacing := 1  # 1 = 右, -1 = 左
 
 var knockback := Vector2.ZERO
 var knock_time := 0.0
@@ -21,7 +23,11 @@ func _physics_process(delta):
 
 	var direction = Input.get_axis("left", "right")
 
-	# 👉 如果在击退中，优先使用击退
+	if direction != 0:
+		curfacing = sign(direction)
+	attack_box.position.x = -attack_box.position.x
+
+	# 如果在击退中，优先使用击退
 	if knock_time > 0:
 		velocity = knockback
 		knock_time -= delta

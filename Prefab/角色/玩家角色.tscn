@@ -3,12 +3,50 @@
 [ext_resource type="Script" uid="uid://bmos3pw0xkf34" path="res://GDScripts/玩家/玩家所有移动.gd" id="1_nfgnx"]
 [ext_resource type="Texture2D" uid="uid://d0fgk3fhyal7f" path="res://Assets/images/Pink Man/Fall (32x32).png" id="1_qvoa7"]
 [ext_resource type="Texture2D" uid="uid://v1kmxdsi3t81" path="res://Assets/images/Pink Man/Idle (32x32).png" id="1_uyb8x"]
+[ext_resource type="Texture2D" uid="uid://bpno8fomi8j38" path="res://Assets/images/LDJ/攻击动画/attack(32×32）.png" id="2_a6oc6"]
 [ext_resource type="Texture2D" uid="uid://dp8iko0a7ma5f" path="res://Assets/images/Pink Man/Jump (32x32).png" id="3_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cmgy0elgamj1y" path="res://Assets/images/Pink Man/Run (32x32).png" id="4_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cngjfjfc37vex" path="res://Assets/images/Pink Man/Hit (32x32).png" id="6_227gi"]
 [ext_resource type="Script" uid="uid://ce66i4gf5g6bd" path="res://GDScripts/玩家/玩家动画切换.gd" id="6_csbx2"]
 [ext_resource type="AudioStream" uid="uid://cgm1763ygod3n" path="res://Assets/sounds/Jump_new.wav" id="6_fcw5n"]
 [ext_resource type="Script" uid="uid://dky01sx8812y7" path="res://GDScripts/玩家/玩家收击与碰撞.gd" id="7_2p2l7"]
+[ext_resource type="Script" uid="uid://daguxvnyl7u45" path="res://Prefab/角色/玩家攻击.gd" id="11_p6q0w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7bly"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rggg"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooxhk"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pjpd"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wcwv"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e8bs"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgi7v"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51pdw"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ariue"]
+atlas = ExtResource("2_a6oc6")
+region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oq8l4"]
 atlas = ExtResource("1_uyb8x")
@@ -134,6 +172,38 @@ region = Rect2(192, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_l7bly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rggg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooxhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pjpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wcwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e8bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgi7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51pdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ariue")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 26.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_qvoa7")
 }],
 "loop": true,
@@ -257,6 +327,9 @@ size = Vector2(10.333334, 12.266666)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryoof"]
 size = Vector2(11.000002, 10.000002)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6oc6"]
+size = Vector2(11.050003, 10.000002)
+
 [node name="Player" type="CharacterBody2D" unique_id=538243393]
 scale = Vector2(5, 5)
 script = ExtResource("1_nfgnx")
@@ -264,9 +337,9 @@ script = ExtResource("1_nfgnx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1597771471]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_78025")
-animation = &"Touch_Enemy"
+animation = &"Attack"
 autoplay = "Idle"
-frame = 6
+frame = 8
 frame_progress = 1.0
 script = ExtResource("6_csbx2")
 
@@ -278,10 +351,22 @@ shape = SubResource("RectangleShape2D_nfgnx")
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=591649179]
 stream = ExtResource("6_fcw5n")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1655812638 groups=["Player"]]
+[node name="HurtBox" type="Area2D" parent="." unique_id=1655812638 groups=["Player"]]
 script = ExtResource("7_2p2l7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=602217970]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=602217970]
 position = Vector2(0.29999995, 1.8)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ryoof")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="AttackBox" type="Area2D" parent="." unique_id=435401870 groups=["PlayerAttackBox"]]
+position = Vector2(9, 1.5)
+script = ExtResource("11_p6q0w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=2072812651]
+position = Vector2(0.67499924, 0)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_a6oc6")
+debug_color = Color(1, 0, 0, 0.41960785)

@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 
 enum AnimState {
 	NORMAL,
-	Touched_Enemy,
+	TOUCHED_ENEMY,
 	ATTACK
 }
 
@@ -10,7 +10,8 @@ var anim_state = AnimState.NORMAL
 
 func _ready():
 	get_parent().connect("move_state_changed", _on_move_state_changed)
-	get_parent().get_node("Area2D").touch_enemy.connect(_on_touch_enemy)
+	get_parent().get_node("HurtBox").touch_enemy.connect(_on_touch_enemy)
+	get_parent().get_node("AttackBox").connect("play_AttackAnim", _on_attack)
 
 func _on_move_state_changed(is_run, is_jump, is_fall, dir):
 
@@ -34,13 +35,24 @@ func _on_move_state_changed(is_run, is_jump, is_fall, dir):
 func _on_touch_enemy():
 
 	# 已经在受击了就别重复播
-	if anim_state == AnimState.Touched_Enemy:
+	if anim_state == AnimState.TOUCHED_ENEMY:
 		return
 
-	anim_state = AnimState.Touched_Enemy
+	anim_state = AnimState.TOUCHED_ENEMY
 
 	play("Touch_Enemy")
 
 	await animation_finished
 
+	anim_state = AnimState.NORMAL
+
+func _on_attack():
+
+	if anim_state != AnimState.NORMAL:
+		return
+
+	anim_state = AnimState.ATTACK
+	play("Attack")
+
+	await animation_finished
 	anim_state = AnimState.NORMAL

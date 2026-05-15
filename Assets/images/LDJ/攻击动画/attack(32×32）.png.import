@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxrpev16d6ue2"
-path="res://.godot/imported/Idle(64x64).png-5ec8076fec5139f3df130db3d8d90352.ctex"
+uid="uid://bpno8fomi8j38"
+path="res://.godot/imported/attack(32×32）.png-9539569e451b366d483f345ec26d5264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/LDJ/小骑士/Idle(64x64).png"
-dest_files=["res://.godot/imported/Idle(64x64).png-5ec8076fec5139f3df130db3d8d90352.ctex"]
+source_file="res://Assets/images/LDJ/攻击动画/attack(32×32）.png"
+dest_files=["res://.godot/imported/attack(32×32）.png-9539569e451b366d483f345ec26d5264.ctex"]
 
 [params]
 
