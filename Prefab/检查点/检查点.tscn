@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y22b5dvyhc3b"]
 
 [ext_resource type="Texture2D" uid="uid://b386g2dm2pj8a" path="res://Assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="1_gjb8s"]
-[ext_resource type="Script" uid="uid://bauds7ctnn7x7" path="res://addons/LevelManeger/加载关卡.gd" id="2_nm2ul"]
+[ext_resource type="Script" uid="uid://bauds7ctnn7x7" path="res://addons/LevelManeger/scripts/加载关卡.gd" id="2_nm2ul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmq54"]
 atlas = ExtResource("1_gjb8s")

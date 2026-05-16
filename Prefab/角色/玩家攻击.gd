@@ -10,6 +10,9 @@ var attack_time_left := 0.0
 
 var hit_list := []
 
+# 这个属性用来让攻击盒子知道它属于哪个角色，从而访问角色的 stats属性
+var owner_stats: Stats
+
 func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		start_attack()
@@ -44,4 +47,5 @@ func _do_hit_check():
 		if area.is_in_group("Enemy") and area not in hit_list:
 			hit_list.append(area)
 			print("HitedAnim")
-			area.hitted.emit(knock_force, global_position)
+			var damage = owner_stats.current_attack
+			area.hitted.emit(damage, knock_force, global_position)

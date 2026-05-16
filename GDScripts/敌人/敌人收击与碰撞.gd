@@ -10,7 +10,7 @@ enum State {
 
 var state = State.MOVE
 
-signal hitted(knock_force, hit_pos)
+signal hitted(damage, knock_force, hit_pos)
 
 func _ready() -> void:
 
@@ -26,17 +26,37 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		print("guaaa")
 
-func _on_hitted(force, hit_pos):
+func _on_hitted(damage, force, hit_pos):
 	if state == State.HIT:
 		return
 
 	state = State.HIT
 	timer.paused = true
 	animated_sprite_2d.speed_scale = 0
+
+
+	# 扣血前
+	var old_health = get_parent().stats.health
+	# 计算伤害
+	var final_damage = max(
+		1,
+		damage - get_parent().stats.current_defense
+	)
+	get_parent().stats.health -= final_damage
+	var new_health = get_parent().stats.health
+	print(
+	"敌人受到伤害: ",
+	final_damage,
+	" | HP: ",
+	old_health,
+	" -> ",
+	new_health
+	)
+
+	# 计算击退方向和力度
 	var dir = (global_position - hit_pos).normalized()
 	dir.y = 0
 	dir = dir.normalized()
-
 	get_parent().position += dir * force * 0.1
 
 	state = State.MOVE

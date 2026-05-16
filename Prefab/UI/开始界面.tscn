@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bk5fpvjyrjf0i"]
 
-[ext_resource type="Script" uid="uid://s4xenlhlkqpt" path="res://addons/LevelManeger/加载关卡(UI).gd" id="1_t5uem"]
+[ext_resource type="Script" uid="uid://s4xenlhlkqpt" path="res://addons/LevelManeger/scripts/加载关卡(UI).gd" id="1_t5uem"]
 
 [node name="开始界面" type="Control" unique_id=1210242529]
 layout_mode = 3

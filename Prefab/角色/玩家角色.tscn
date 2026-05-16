@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0fgk3fhyal7f" path="res://Assets/images/Pink Man/Fall (32x32).png" id="1_qvoa7"]
 [ext_resource type="Texture2D" uid="uid://v1kmxdsi3t81" path="res://Assets/images/Pink Man/Idle (32x32).png" id="1_uyb8x"]
 [ext_resource type="Texture2D" uid="uid://bpno8fomi8j38" path="res://Assets/images/LDJ/攻击动画/attack(32×32）.png" id="2_a6oc6"]
+[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/statssystem/scripts/stats.gd" id="2_uxsxf"]
 [ext_resource type="Texture2D" uid="uid://dp8iko0a7ma5f" path="res://Assets/images/Pink Man/Jump (32x32).png" id="3_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cmgy0elgamj1y" path="res://Assets/images/Pink Man/Run (32x32).png" id="4_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cngjfjfc37vex" path="res://Assets/images/Pink Man/Hit (32x32).png" id="6_227gi"]
@@ -11,6 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://cgm1763ygod3n" path="res://Assets/sounds/Jump_new.wav" id="6_fcw5n"]
 [ext_resource type="Script" uid="uid://dky01sx8812y7" path="res://GDScripts/玩家/玩家收击与碰撞.gd" id="7_2p2l7"]
 [ext_resource type="Script" uid="uid://daguxvnyl7u45" path="res://Prefab/角色/玩家攻击.gd" id="11_p6q0w"]
+
+[sub_resource type="Resource" id="Resource_tynam"]
+resource_local_to_scene = true
+script = ExtResource("2_uxsxf")
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7bly"]
 atlas = ExtResource("2_a6oc6")
@@ -333,6 +339,7 @@ size = Vector2(11.050003, 10.000002)
 [node name="Player" type="CharacterBody2D" unique_id=538243393]
 scale = Vector2(5, 5)
 script = ExtResource("1_nfgnx")
+stats = SubResource("Resource_tynam")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1597771471]
 scale = Vector2(0.5, 0.5)

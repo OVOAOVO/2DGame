@@ -2,7 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cbr4auhahxv0c" path="res://GDScripts/敌人/敌人左右巡逻.gd" id="1_k3g4t"]
 [ext_resource type="Texture2D" uid="uid://dku1g34w8tgib" path="res://Assets/images/LDJ/尖头小绿怪/Idle(32x32).png" id="1_sina8"]
+[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/statssystem/scripts/stats.gd" id="2_6yf38"]
 [ext_resource type="Script" uid="uid://c4b0gfe3haeal" path="res://GDScripts/敌人/敌人收击与碰撞.gd" id="3_hjjtb"]
+
+[sub_resource type="Resource" id="Resource_6yf38"]
+resource_local_to_scene = true
+script = ExtResource("2_6yf38")
+base_defense = 5
+base_attack = 5
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1tsq"]
 atlas = ExtResource("1_sina8")
@@ -60,6 +68,7 @@ size = Vector2(20.333334, 29.333334)
 [node name="尖头小绿怪" type="Node2D" unique_id=1236540782]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_k3g4t")
+stats = SubResource("Resource_6yf38")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=449919378 groups=["Enemy"]]
 script = ExtResource("3_hjjtb")

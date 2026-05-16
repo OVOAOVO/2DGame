@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var stats: Stats
+
 @onready var area = $Area2D
 @onready var timer: Timer = $Area2D/Timer
 @onready var animated_sprite_2d: AnimatedSprite2D = $Area2D/AnimatedSprite2D

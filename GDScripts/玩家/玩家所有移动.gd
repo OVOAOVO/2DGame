@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var stats: Stats
+
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY: float = -850.0
 
@@ -18,6 +20,8 @@ func _on_knockback(dir: Vector2, force: float):
 
 func _ready():
 	hurtbox.hit_knockback.connect(_on_knockback)
+	stats = stats.duplicate(true)
+	attack_box.owner_stats = stats
 
 func _physics_process(delta):
 
