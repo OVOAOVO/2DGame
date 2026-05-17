@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0fgk3fhyal7f" path="res://Assets/images/Pink Man/Fall (32x32).png" id="1_qvoa7"]
 [ext_resource type="Texture2D" uid="uid://v1kmxdsi3t81" path="res://Assets/images/Pink Man/Idle (32x32).png" id="1_uyb8x"]
 [ext_resource type="Texture2D" uid="uid://bpno8fomi8j38" path="res://Assets/images/LDJ/攻击动画/attack(32×32）.png" id="2_a6oc6"]
-[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/statssystem/scripts/stats.gd" id="2_uxsxf"]
+[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="2_uxsxf"]
 [ext_resource type="Texture2D" uid="uid://dp8iko0a7ma5f" path="res://Assets/images/Pink Man/Jump (32x32).png" id="3_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cmgy0elgamj1y" path="res://Assets/images/Pink Man/Run (32x32).png" id="4_un6cx"]
 [ext_resource type="Texture2D" uid="uid://cngjfjfc37vex" path="res://Assets/images/Pink Man/Hit (32x32).png" id="6_227gi"]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c0vmmarjsdfga"]
+
+[ext_resource type="Script" uid="uid://dcih3kq5kb0mt" path="res://GDScripts/GameUI/health_bar.gd" id="1_flcly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pir75"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pir75"]
+bg_color = Color(1, 0.32036144, 0.42474428, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flcly"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+shadow_color = Color(0, 0, 0, 0.27450982)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmha4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="HealthBar" type="ProgressBar" unique_id=946986268]
+z_index = 1
+offset_right = 160.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_pir75")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pir75")
+value = 60.0
+show_percentage = false
+script = ExtResource("1_flcly")
+
+[node name="DamageBar" type="ProgressBar" parent="." unique_id=302898029]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_flcly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rmha4")
+value = 80.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="." unique_id=2028790391]
+wait_time = 0.4
+one_shot = true
