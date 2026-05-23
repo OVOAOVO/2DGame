@@ -3,9 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://croi3w8v8p183" path="res://Assets/images/Background/Brown.png" id="1_kd0ov"]
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="2_8oahv"]
 [ext_resource type="PackedScene" uid="uid://y14gododukis" path="res://Prefab/TileMaps/草地面.tscn" id="3_2rln6"]
+[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="3_8h8fo"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="4_8h8fo"]
 [ext_resource type="PackedScene" uid="uid://oid5gyah2wbn" path="res://Prefab/敌人/蜗牛.tscn" id="6_2rln6"]
 [ext_resource type="PackedScene" uid="uid://cwppilgl4xlc4" path="res://Prefab/敌人/尖头小绿怪.tscn" id="6_8h8fo"]
+
+[sub_resource type="Resource" id="Resource_8h8fo"]
+resource_local_to_scene = true
+script = ExtResource("3_8h8fo")
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
+
+[sub_resource type="Resource" id="Resource_kys31"]
+resource_local_to_scene = true
+script = ExtResource("3_8h8fo")
+base_defense = 5
+base_attack = 5
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
 
 [node name="关卡1" type="Node2D" unique_id=1542376960]
 
@@ -17,6 +30,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=538243393 instance=ExtResource("2_8oahv")]
 position = Vector2(55, 618)
+stats = SubResource("Resource_8h8fo")
 
 [node name="TileMap" parent="." unique_id=969291628 instance=ExtResource("3_2rln6")]
 metadata/_edit_group_ = true
@@ -29,6 +43,7 @@ next_level = "uid://bmbth1rc7pmut"
 
 [node name="尖头小绿怪" parent="Enemies" unique_id=666808917 instance=ExtResource("6_8h8fo")]
 position = Vector2(514, 635.00006)
+stats = SubResource("Resource_kys31")
 
 [node name="蜗牛" parent="Enemies" unique_id=1714253583 instance=ExtResource("6_2rln6")]
 position = Vector2(761.00006, 645)
