@@ -13,7 +13,7 @@ var hit_list := []
 # 这个属性用来让攻击盒子知道它属于哪个角色，从而访问角色的 stats属性
 var owner_stats: Stats
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("attack"):
 		start_attack()
 

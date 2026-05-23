@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://buucxtguyaoch"]
+
+[ext_resource type="Theme" uid="uid://bk0edvbb81s2k" path="res://Assets/themes/theme.tres" id="1_0nluu"]
+[ext_resource type="Script" uid="uid://cqhucryberibg" path="res://GDScripts/GameUI/Inventory/item_panel.gd" id="2_yrcfc"]
+
+[node name="ItemPanel" type="Panel" unique_id=1882884646]
+custom_minimum_size = Vector2(140, 60)
+offset_right = 330.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+theme = ExtResource("1_0nluu")
+script = ExtResource("2_yrcfc")
+
+[node name="TooltipTimer" type="Timer" parent="." unique_id=794700128]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1016585067]
+layout_mode = 0
+offset_right = 335.0
+offset_bottom = 66.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=419394403]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=287117070]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1647398487]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_alignment = 1
+clip_text = true
+
+[node name="AmountLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1699114414]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1

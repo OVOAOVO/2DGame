@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b1flbbynjlimc"]
+
+[ext_resource type="Script" uid="uid://8gmcplc6dvqx" path="res://addons/InventorySystem/Scripts/item_data.gd" id="1_anms8"]
+[ext_resource type="Texture2D" uid="uid://dm82d4jevnlvp" path="res://Prefab/UI/GameUI/Inventory/sword.png" id="2"]
+
+[resource]
+script = ExtResource("1_anms8")
+unique_id = "sword"
+display_name = "sword"
+description = "这是gay伦的大保健"
+icon = ExtResource("2")

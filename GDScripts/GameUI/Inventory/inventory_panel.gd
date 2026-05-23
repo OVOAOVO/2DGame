@@ -1,0 +1,62 @@
+extends Control
+
+const ItemPanelScene := preload("res://Prefab/UI/GameUI/Inventory/物品.tscn")
+
+var inventory: Inventory = null:
+	set = set_inventory
+
+@onready var _item_grid_container: GridContainer = %ItemGridContainer
+@onready var _tooltip_panel: Panel = %TooltipPanel
+@onready var _add_item_button: Button = %AddItemButton
+@onready var _remove_item_button: Button = %RemoveItemButton
+
+
+func _ready() -> void:
+	_add_item_button.pressed.connect(_add_random_item)
+	_remove_item_button.pressed.connect(_remove_random_item)
+
+	var test_inventory := Inventory.new()
+	test_inventory.add_item("healing_gem", 3)
+	test_inventory.add_item("sword", 2)
+	set_inventory(test_inventory)
+
+
+func set_inventory(new_inventory: Inventory) -> void:
+	if inventory != new_inventory:
+		new_inventory.changed.connect(_update_items_display)
+
+	inventory = new_inventory
+	_update_items_display()
+
+
+func _update_items_display() -> void:
+	print("UI UPDATE")
+	for node in _item_grid_container.get_children():
+		node.queue_free()
+
+	for item_stack in inventory.items:
+		var item_panel: ItemPanel = ItemPanelScene.instantiate()
+		_item_grid_container.add_child(item_panel)
+		item_panel.display_item(item_stack.unique_id, item_stack.amount)
+		item_panel.tooltip_requested.connect(_on_tooltip_requested.bind(item_panel))
+
+
+func _on_tooltip_requested(item_panel: ItemPanel) -> void:
+	var description := ItemDatabase.get_item_data(item_panel.item_unique_id).description
+	_tooltip_panel.display(description, get_global_mouse_position())
+
+
+func _add_random_item() -> void:
+	if ItemDatabase.ITEMS.is_empty():
+		printerr("Cannot add item: ItemDatabase has no items loaded.")
+		return
+
+	var item_keys := ItemDatabase.ITEMS.keys()
+	var item_unique_id: String = item_keys[randi() % item_keys.size()]
+	inventory.add_item(item_unique_id)
+
+
+func _remove_random_item() -> void:
+	if inventory.items.size() > 0:
+		var random_index := randi() % inventory.items.size()
+		inventory.remove_item(inventory.items[random_index].unique_id)

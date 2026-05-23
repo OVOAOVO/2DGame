@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bsjwinso8f076"]
+
+[ext_resource type="Texture2D" uid="uid://s5tgxeq6hxn1" path="res://Prefab/UI/GameUI/Inventory/magic_wand.png" id="1"]
+[ext_resource type="Script" uid="uid://8gmcplc6dvqx" path="res://addons/InventorySystem/Scripts/item_data.gd" id="1_c1ou1"]
+
+[resource]
+script = ExtResource("1_c1ou1")
+unique_id = "4534"
+display_name = "星星发张"
+description = "海绵宝宝杀死了派大星！！"
+icon = ExtResource("1")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c3b5dkgssmurc"]
+
+[ext_resource type="Texture2D" uid="uid://ddcqcnkft6nu8" path="res://Prefab/UI/GameUI/Inventory/gem_fire.png" id="1"]
+[ext_resource type="Script" uid="uid://8gmcplc6dvqx" path="res://addons/InventorySystem/Scripts/item_data.gd" id="2_x16t8"]
+
+[resource]
+script = ExtResource("2_x16t8")
+unique_id = "2"
+display_name = "gem_fire"
+description = "这是gem_fire"
+icon = ExtResource("1")
