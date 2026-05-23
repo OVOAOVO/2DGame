@@ -29,7 +29,7 @@ func _physics_process(delta):
 
 	if direction != 0:
 		curfacing = sign(direction)
-	attack_box.position.x = -attack_box.position.x
+	attack_box.position.x = abs(attack_box.position.x) * curfacing
 
 	# 如果在击退中，优先使用击退
 	if knock_time > 0:
