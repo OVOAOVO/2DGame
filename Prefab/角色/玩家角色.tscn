@@ -377,3 +377,6 @@ position = Vector2(0.67499924, 0)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_a6oc6")
 debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=450936015]
+position_smoothing_enabled = true
