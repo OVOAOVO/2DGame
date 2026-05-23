@@ -53,6 +53,13 @@ func _on_hitted(damage, force, hit_pos):
 	new_health
 	)
 
+	# 死亡判断
+	if get_parent().stats.health <= 0:
+		# 播放死亡动画
+		print("敌人死亡")
+		get_parent().queue_free()
+		return
+
 	# 计算击退方向和力度
 	var dir = (global_position - hit_pos).normalized()
 	dir.y = 0
