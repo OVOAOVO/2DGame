@@ -15,10 +15,12 @@ func _ready() -> void:
 	_add_item_button.pressed.connect(_add_random_item)
 	_remove_item_button.pressed.connect(_remove_random_item)
 
-	var test_inventory := Inventory.new()
-	test_inventory.add_item("healing_gem", 3)
-	test_inventory.add_item("sword", 2)
-	set_inventory(test_inventory)
+	if get_parent() == get_tree().root:
+		var test_inventory := Inventory.new()
+		test_inventory.add_item("healing_gem", 3)
+		test_inventory.add_item("sword", 2)
+		set_inventory(test_inventory)
+
 
 
 func set_inventory(new_inventory: Inventory) -> void:
