@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqiywsb4y58eo"
-path="res://.godot/imported/gree(48×48).png-0b49e3ba9f85b7769b89a5fc9be18421.ctex"
+uid="uid://cek1ecu5nw5ln"
+path="res://.godot/imported/gree_left(32×48).png-6b7d2cbb4ca91b1481452c8dc7faf4e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/LDJ/草地/gree(48×48).png"
-dest_files=["res://.godot/imported/gree(48×48).png-0b49e3ba9f85b7769b89a5fc9be18421.ctex"]
+source_file="res://Assets/images/LDJ/草地/gree_left(32×48).png"
+dest_files=["res://.godot/imported/gree_left(32×48).png-6b7d2cbb4ca91b1481452c8dc7faf4e7.ctex"]
 
 [params]
 
