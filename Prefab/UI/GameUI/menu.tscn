@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cirb4swnhspj8"]
+
+[ext_resource type="Script" uid="uid://dj0sa1y6n8nvq" path="res://GDScripts/Save/save_menu.gd" id="1_drg4g"]
+[ext_resource type="PackedScene" uid="uid://cyd53yrtvc3sa" path="res://Prefab/UI/GameUI/Inventory/背包.tscn" id="1_i4k6q"]
+[ext_resource type="PackedScene" uid="uid://knalbswhmcnu" path="res://Prefab/UI/GameUI/Save/保存面板.tscn" id="2_s4gqd"]
+
+[node name="menu" type="Node2D" unique_id=377147853]
+script = ExtResource("1_drg4g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1038397292]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="InventoryPanel" parent="CanvasLayer" unique_id=1529322256 instance=ExtResource("1_i4k6q")]
+unique_name_in_owner = true
+offset_left = 776.0
+offset_top = 120.0
+offset_right = 376.0
+offset_bottom = 320.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="SavePanel" parent="CanvasLayer" unique_id=1547402108 instance=ExtResource("2_s4gqd")]
+unique_name_in_owner = true
+offset_left = 782.0
+offset_top = -134.0
+offset_right = 1202.0
+offset_bottom = -46.0
+metadata/_edit_use_anchors_ = true
