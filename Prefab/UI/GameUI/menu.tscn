@@ -13,6 +13,7 @@ transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="InventoryPanel" parent="CanvasLayer" unique_id=1529322256 instance=ExtResource("1_i4k6q")]
 unique_name_in_owner = true
+visible = false
 offset_left = 776.0
 offset_top = 120.0
 offset_right = 376.0
@@ -22,6 +23,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SavePanel" parent="CanvasLayer" unique_id=1547402108 instance=ExtResource("2_s4gqd")]
 unique_name_in_owner = true
+visible = false
 offset_left = 928.00006
 offset_top = 382.0
 offset_right = 1348.0
