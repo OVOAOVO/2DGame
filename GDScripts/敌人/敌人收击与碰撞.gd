@@ -55,6 +55,13 @@ func _on_hitted(damage, force, hit_pos):
 
 	# 死亡判断
 	if get_parent().stats.health <= 0:
+		# 临时测试:直接给玩家加经验
+		var player_stats = SaveManager.save.player_stats
+		player_stats.experience += 1000
+		print("玩家获得经验: 1000")
+		print("当前等级:", player_stats.level)
+		print("当前攻击:", player_stats.current_attack)
+		print("当前血量:", player_stats.current_max_health)
 		# 播放死亡动画
 		print("敌人死亡")
 		get_parent().queue_free()

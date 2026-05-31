@@ -67,7 +67,7 @@ func _set_menu(open: bool) -> void:
 # ----------------------------
 
 func _on_reload_requested() -> void:
-	SaveManager.load_savegame()
+	SaveManager.init()  # 重新加载存档数据
 	_on_save_loaded()
 
 
