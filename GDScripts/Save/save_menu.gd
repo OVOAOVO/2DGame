@@ -28,8 +28,6 @@ func _init_ui() -> void:
 
 
 func _init_save() -> void:
-	SaveManager.init()
-
 	# 如果已经有存档，直接刷新一次UI
 	if SaveManager.save != null:
 		_on_save_loaded()
@@ -69,7 +67,8 @@ func _set_menu(open: bool) -> void:
 # ----------------------------
 
 func _on_reload_requested() -> void:
-	SaveManager.init()
+	SaveManager.load_savegame()
+	_on_save_loaded()
 
 
 func _on_save_requested() -> void:

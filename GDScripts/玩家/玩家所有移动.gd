@@ -20,8 +20,14 @@ func _on_knockback(dir: Vector2, force: float):
 
 func _ready():
 	hurtbox.hit_knockback.connect(_on_knockback)
-	stats = stats.duplicate(true)
+	# 1. 直接获取 SaveManager 里的 stats 实例
+	stats = SaveManager.save.player_stats
+	# 3. 打印一下当前血量，看看是不是和存盘前一样
+	print("玩家加载成功，当前血量: ", stats.health, "/", stats.current_max_health)
+	print("玩家加载成功，当前攻击: ", stats.current_attack, "/", stats.base_attack)
+	print("玩家加载成功，当前防御: ", stats.current_defense, "/", stats.base_defense)
 	attack_box.owner_stats = stats
+	print("Player ready")
 
 func _physics_process(delta):
 

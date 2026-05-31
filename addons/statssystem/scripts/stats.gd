@@ -23,13 +23,13 @@ signal health_changed(cur_health: int, max_health: int)
 @export var base_attack: int = 10
 @export var experience: int = 0: set = _on_experience_set
 
-var level: int:
+@export var level: int:
 	get(): return floor(max(1.0, sqrt(experience / BASE_LEVEL_XP)+0.5))
-var current_max_health: int = 100
-var current_defense: int = 10
-var current_attack: int = 10
+@export var current_max_health: int = 100
+@export var current_defense: int = 10
+@export var current_attack: int = 10
 
-var health: int = 0: set = _on_health_set
+@export var health: int = 0: set = _on_health_set
 
 var stat_buffs: Array[StatBuff]
 
