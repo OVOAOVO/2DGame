@@ -9,7 +9,7 @@ export_credentials.cfg
 *.tmp
 
 # Large folders not needed on GitHub
-model/
+models/
 sherpa-asr-gdextension/
 
 # Imported translations (automatically generated from CSV files)
