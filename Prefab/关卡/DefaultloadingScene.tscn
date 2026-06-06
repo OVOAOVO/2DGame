@@ -42,10 +42,11 @@ _data = {
 &"transition": SubResource("Animation_uxvsl")
 }
 
-[node name="LoadingScreen" type="CanvasLayer" unique_id=369668156 node_paths=PackedStringArray("animation_player")]
+[node name="LoadingScreen" type="CanvasLayer" unique_id=369668156 node_paths=PackedStringArray("animation_player", "progress_bar")]
 layer = 10
 script = ExtResource("1_cq7kg")
 animation_player = NodePath("AnimationPlayer")
+progress_bar = NodePath("ProgressBar")
 
 [node name="Panel" type="Panel" parent="." unique_id=349933393]
 anchors_preset = 15
@@ -58,3 +59,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_uxvsl")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=139726777]
 libraries/ = SubResource("AnimationLibrary_cq7kg")
 autoplay = &"transition"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2124934428]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -57.5
+offset_right = 167.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
