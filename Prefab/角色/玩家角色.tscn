@@ -337,6 +337,8 @@ size = Vector2(11.000002, 10.000002)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6oc6"]
 size = Vector2(11.050003, 10.000002)
 
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_tynam"]
+
 [node name="Player" type="CharacterBody2D" unique_id=538243393]
 scale = Vector2(5, 5)
 script = ExtResource("1_nfgnx")
@@ -388,3 +390,8 @@ limit_bottom = 920
 position_smoothing_enabled = true
 
 [node name="menu" parent="." unique_id=377147853 instance=ExtResource("13_tynam")]
+
+[node name="MicroRecorder" type="AudioStreamPlayer" parent="." unique_id=2000772667]
+stream = SubResource("AudioStreamMicrophone_tynam")
+autoplay = true
+bus = &"MicroRecorder"

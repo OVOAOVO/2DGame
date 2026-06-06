@@ -15,6 +15,11 @@ run/main_scene="uid://bk5fpvjyrjf0i"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cmf6uufpvnnm3"
+driver/enable_input=true
+
 [autoload]
 
 "背景音乐"="*uid://btevy46bhchta"

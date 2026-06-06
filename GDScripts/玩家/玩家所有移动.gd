@@ -14,6 +14,8 @@ var curfacing := 1  # 1 = 右, -1 = 左
 var knockback := Vector2.ZERO
 var knock_time := 0.0
 
+var AudioMicroRecorder
+
 func _on_knockback(dir: Vector2, force: float):
 	knockback = dir * force
 	knock_time = 0.15
@@ -28,9 +30,12 @@ func _ready():
 	print("玩家加载成功，当前防御: ", stats.current_defense, " base: ", stats.base_defense)
 	attack_box.owner_stats = stats
 	print("Player ready")
+	AudioMicroRecorder = AudioServer.get_bus_index("MicroRecorder")
 
 func _physics_process(delta):
-
+	var currentDb = AudioServer.get_bus_peak_volume_left_db(AudioMicroRecorder, 0)
+	var magnitude = db_to_linear(currentDb)*100.0
+	print("当前麦克风输入音量线性: ", magnitude)
 	var direction = Input.get_axis("left", "right")
 
 	if direction != 0:
