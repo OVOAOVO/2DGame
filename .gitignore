@@ -8,6 +8,9 @@ export.cfg
 export_credentials.cfg
 *.tmp
 
+# Model files (too large for GitHub)
+model/
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 
