@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dky01sx8812y7" path="res://GDScripts/玩家/玩家收击与碰撞.gd" id="7_2p2l7"]
 [ext_resource type="Script" uid="uid://daguxvnyl7u45" path="res://Prefab/角色/玩家攻击.gd" id="11_p6q0w"]
 [ext_resource type="PackedScene" uid="uid://cirb4swnhspj8" path="res://Prefab/UI/GameUI/menu.tscn" id="13_tynam"]
+[ext_resource type="Script" uid="uid://82hwwfk4md38" path="res://GDScripts/音频分析/语音交互.gd" id="14_cnaal"]
 
 [sub_resource type="Resource" id="Resource_tynam"]
 resource_local_to_scene = true
@@ -395,3 +396,13 @@ position_smoothing_enabled = true
 stream = SubResource("AudioStreamMicrophone_tynam")
 autoplay = true
 bus = &"MicroRecorder"
+
+[node name="Model" type="Node2D" parent="." unique_id=118391438]
+script = ExtResource("14_cnaal")
+
+[node name="SherpaASR" type="SherpaASR" parent="Model" unique_id=1574672548]
+model_dir = " res://models/sherpa-asr/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20"
+encoder_path = " res://models/sherpa-asr/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20/encoder-epoch-99-avg-1.onnx"
+decoder_path = " res://models/sherpa-asr/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20/decoder-epoch-99-avg-1.onnx"
+joiner_path = " res://models/sherpa-asr/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20/joiner-epoch-99-avg-1.onnx"
+tokens_path = " res://models/sherpa-asr/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20/tokens.txt"

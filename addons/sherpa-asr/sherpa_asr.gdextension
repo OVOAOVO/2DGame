@@ -1,0 +1,19 @@
+[configuration]
+
+entry_symbol = "sherpa_asr_initialize"
+compatibility_minimum = "4.3"
+reloadable = true
+
+[libraries]
+
+windows.editor.x86_64 = "res://addons/sherpa-asr/sherpa-asr.windows.editor.x86_64.dll"
+windows.debug.x86_64 = "res://addons/sherpa-asr/sherpa-asr.windows.editor.x86_64.dll"
+windows.release.x86_64 = "res://addons/sherpa-asr/sherpa-asr.windows.editor.x86_64.dll"
+
+[dependencies]
+
+# sherpa-onnx 运行时依赖 (需放在与 .gdextension 同目录)
+# 从 sherpa-onnx Releases 下载的 lib/ 目录:
+#   - sherpa-onnx.dll
+#   - onnxruntime.dll
+# 放到 addons/sherpa-asr/ 下即可
