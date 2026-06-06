@@ -12,6 +12,10 @@ export_credentials.cfg
 models/
 sherpa-asr-gdextension/
 
+# sherpa-asr: DLLs regenerate on each open, temp files
+addons/sherpa-asr/*.dll
+addons/sherpa-asr/~*
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 
