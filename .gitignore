@@ -8,8 +8,9 @@ export.cfg
 export_credentials.cfg
 *.tmp
 
-# Model files (too large for GitHub)
+# Large folders not needed on GitHub
 model/
+sherpa-asr-gdextension/
 
 # Imported translations (automatically generated from CSV files)
 *.translation
