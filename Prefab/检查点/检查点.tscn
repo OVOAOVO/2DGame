@@ -84,10 +84,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nm2ul"]
 size = Vector2(68, 96)
 
-[node name="检查点" type="Area2D" unique_id=1450161505]
+[node name="Node2D" type="Node2D" unique_id=278491585 node_paths=PackedStringArray("area")]
 script = ExtResource("2_nm2ul")
+area = NodePath("检查点")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1861835675]
+[node name="检查点" type="Area2D" parent="." unique_id=1450161505]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="检查点" unique_id=1861835675]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wls6s")
 animation = &"Wave"
@@ -95,6 +98,6 @@ autoplay = "Wave"
 frame = 3
 frame_progress = 0.11125641
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018273571]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="检查点" unique_id=1018273571]
 position = Vector2(5, 12)
 shape = SubResource("RectangleShape2D_nm2ul")

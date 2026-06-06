@@ -1,3 +1,5 @@
+# 已弃用 2026.6.6
+
 extends Button
 
 @export_file("*.tscn") var next_level: String

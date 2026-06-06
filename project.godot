@@ -20,6 +20,7 @@ config/icon="res://Assets/icon.svg"
 "背景音乐"="*uid://btevy46bhchta"
 ItemDatabase="*uid://cvgvclp0aeuo1"
 SaveManager="*uid://ck44ur27tnomi"
+scene_loader="*uid://bpedhl5ugdhsm"
 
 [display]
 
@@ -30,7 +31,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/InventorySystem/plugin.cfg", "res://addons/LevelManeger/plugin.cfg", "res://addons/StatsSystem/plugin.cfg", "res://addons/statssystem/plugin.cfg", "res://addons/uimanager/plugin.cfg")
+enabled=PackedStringArray("res://addons/InventorySystem/plugin.cfg", "res://addons/LevelManeger/plugin.cfg", "res://addons/StatsSystem/plugin.cfg", "res://addons/statssystem/plugin.cfg")
 
 [global_group]
 

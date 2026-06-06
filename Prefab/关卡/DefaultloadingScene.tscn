@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bst8sbtsobjs3"]
+
+[ext_resource type="Script" uid="uid://blmatflxf4r5p" path="res://addons/LevelManeger/scripts/loading_scene.gd" id="1_cq7kg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxvsl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_cq7kg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uxvsl"]
+resource_name = "transition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cq7kg"]
+_data = {
+&"RESET": SubResource("Animation_cq7kg"),
+&"transition": SubResource("Animation_uxvsl")
+}
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=369668156 node_paths=PackedStringArray("animation_player")]
+layer = 10
+script = ExtResource("1_cq7kg")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Panel" type="Panel" parent="." unique_id=349933393]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxvsl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=139726777]
+libraries/ = SubResource("AnimationLibrary_cq7kg")
+autoplay = &"transition"
