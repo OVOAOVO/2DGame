@@ -3,7 +3,7 @@ extends Node
 signal progress_changed(progress)
 signal load_finished
 
-var loading_screen: PackedScene = preload("uid://bst8sbtsobjs3")
+@export var loading_screen: PackedScene
 var loaded_resource: PackedScene
 var scene_path: String
 var progress: Array = []
@@ -11,10 +11,20 @@ var use_sub_threads: bool = true
 
 func _ready() -> void:
 	set_process(false)
+	# 如果编辑器未赋值，尝试从项目设置中加载
+	if not loading_screen:
+		var path: String = ProjectSettings.get_setting("level_manager/loading_screen_path", "")
+		if not path.is_empty() and ResourceLoader.exists(path):
+			loading_screen = load(path)
 
 func load_scene(_scene_path:String) -> void:
 	scene_path = _scene_path
-	 
+
+	# 没有配置加载画面时，直接切换场景
+	if not loading_screen:
+		get_tree().change_scene_to_file(scene_path)
+		return
+
 	var new_load_screen = loading_screen.instantiate()
 	add_child(new_load_screen)
 	progress_changed.connect(new_load_screen._on_progress_changed)
