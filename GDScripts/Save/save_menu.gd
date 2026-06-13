@@ -34,7 +34,6 @@ func _init_save() -> void:
 
 
 func _bind_signals() -> void:
-	save_panel.reload_requested.connect(_on_reload_requested)
 	save_panel.save_requested.connect(_on_save_requested)
 
 	SaveManager.save_loaded.connect(_on_save_loaded)
@@ -65,11 +64,6 @@ func _set_menu(open: bool) -> void:
 # ----------------------------
 # UI事件
 # ----------------------------
-
-func _on_reload_requested() -> void:
-	SaveManager.init()  # 重新加载存档数据
-	_on_save_loaded()
-
 
 func _on_save_requested() -> void:
 	SaveManager.save_game()
