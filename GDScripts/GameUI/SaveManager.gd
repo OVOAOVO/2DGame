@@ -2,7 +2,7 @@
 extends Node
 
 var save: SaveGameAsResource
-const CURRENT_VERSION = 2
+var has_save: bool = false  ## 用来显示隐藏菜单
 
 signal save_loaded
 signal save_changed
@@ -14,10 +14,11 @@ func init():
 	# 有存档 覆盖
 	if SaveGameAsResource.save_exists():
 		save = SaveGameAsResource.load_savegame()
-		_upgrade_save()
+		has_save = true
 	# 没有存档 创建一个默认存档
 	else:
 		save = SaveGameAsResource.new()
+		has_save = false
 		save.inventory.add_item("healing_gem", 5)
 		save.inventory.add_item("sword", 1)
 		save.player_stats.setup_stats() # 初始初始化
@@ -27,16 +28,23 @@ func init():
 	print("SaveManager init")
 
 func save_game():
+	# 优先用 scene_loader 记录的路径（change_scene_to_packed 后 scene_file_path 可能为空）
+	var level_path: String = scene_loader.scene_path
+	if level_path.is_empty():
+		level_path = get_tree().current_scene.scene_file_path
+	save.current_level = level_path
 	save.write_savegame()
+	print("[SaveManager] 已保存，地图: ", level_path)
+	has_save = true
 	save_changed.emit()
 
-func _upgrade_save():
-	if save.version < 2:
-		print("检测到旧存档版本1，创建默认玩家属性")
-		if save.player_stats == null:
-			save.player_stats = Stats.new()
-			save.player_stats.setup_stats()
-
-		save.version = 2
-
-		save.write_savegame()
+func load_last_level():
+	"""加载存档中记录的地图，无存档时加载主场景"""
+	var level_path: String = save.current_level if save else ""
+	if level_path.is_empty():
+		level_path = ProjectSettings.get_setting("application/run/main_scene")
+	print("[SaveManager] load_last_level → 路径: ", level_path)
+	if not level_path.is_empty() and ResourceLoader.exists(level_path):
+		scene_loader.load_scene(level_path)
+	else:
+		printerr("[SaveManager] 无法加载地图，路径无效: ", level_path, " 文件是否存在: ", ResourceLoader.exists(level_path))

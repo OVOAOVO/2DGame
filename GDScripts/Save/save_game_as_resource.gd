@@ -3,9 +3,10 @@ extends Resource
 
 const SAVE_GAME_BASE_PATH := "user://save"
 
-@export var version := 1
+@export var version := 3
 @export var inventory := Inventory.new()
 @export var player_stats := Stats.new()
+@export var current_level: String = ""
 
 func write_savegame() -> void:
 	ResourceSaver.save(self, get_save_path())
