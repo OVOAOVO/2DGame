@@ -361,7 +361,7 @@ shape = SubResource("RectangleShape2D_nfgnx")
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=591649179]
 stream = ExtResource("6_fcw5n")
 
-[node name="HurtBox" type="Area2D" parent="." unique_id=1655812638 groups=["Player"]]
+[node name="HurtBox" type="Area2D" parent="." unique_id=1655812638]
 script = ExtResource("7_2p2l7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=602217970]
@@ -370,7 +370,7 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ryoof")
 debug_color = Color(0, 1, 0, 0.41960785)
 
-[node name="AttackBox" type="Area2D" parent="." unique_id=435401870 groups=["PlayerAttackBox"]]
+[node name="AttackBox" type="Area2D" parent="." unique_id=435401870]
 position = Vector2(9, 1.5)
 script = ExtResource("11_p6q0w")
 metadata/_edit_group_ = true

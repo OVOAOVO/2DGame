@@ -18,6 +18,6 @@ metadata/_custom_type_script = "uid://77u6ecdir8o5"
 position = Vector2(1094, 50)
 load_scene = &"uid://bhaem6iuvyq5h"
 
-[node name="Player" parent="." unique_id=538243393 instance=ExtResource("3_yxub4")]
+[node name="Player" parent="." unique_id=538243393 groups=["Player"] instance=ExtResource("3_yxub4")]
 position = Vector2(107.99999, 633.99994)
 stats = SubResource("Resource_4qii7")

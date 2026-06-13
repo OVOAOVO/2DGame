@@ -38,12 +38,6 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/InventorySystem/plugin.cfg", "res://addons/LevelManeger/plugin.cfg", "res://addons/StatsSystem/plugin.cfg", "res://addons/statssystem/plugin.cfg")
 
-[global_group]
-
-Player="玩家"
-Enemy="敌人"
-PlayerAttackBox=""
-
 [input]
 
 left={
