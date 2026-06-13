@@ -28,13 +28,10 @@ func init():
 	print("SaveManager init")
 
 func save_game():
-	# 优先用 scene_loader 记录的路径（change_scene_to_packed 后 scene_file_path 可能为空）
-	var level_path: String = scene_loader.scene_path
-	if level_path.is_empty():
-		level_path = get_tree().current_scene.scene_file_path
-	save.current_level = level_path
+	# scene_loader 是 autoload，scene_path 记录了最后一次加载的场景路径，这里直接保存到存档里，确保下次继续游戏能从这个场景开始
+	save.current_level = scene_loader.scene_path
 	save.write_savegame()
-	print("[SaveManager] 已保存，地图: ", level_path)
+	print("[SaveManager] 已保存，地图: ", save.current_level)
 	has_save = true
 	save_changed.emit()
 
