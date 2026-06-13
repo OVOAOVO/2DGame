@@ -4,7 +4,7 @@
 
 [node name="Node2D" type="Node2D" unique_id=462866750 node_paths=PackedStringArray("play_button")]
 script = ExtResource("1_t5uem")
-initial_scene = &"uid://c51a7fe6kgkky"
+load_scene = &"uid://c51a7fe6kgkky"
 play_button = NodePath("CanvasLayer/开始界面/BoxContainer/开始")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=417184949]
@@ -58,6 +58,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "开始游戏"
+
+[node name="继续游戏" type="Button" parent="CanvasLayer/开始界面/BoxContainer" unique_id=485016241]
+layout_mode = 2
+size_flags_vertical = 3
+text = "继续游戏"
 
 [node name="选项" type="Button" parent="CanvasLayer/开始界面/BoxContainer" unique_id=1401921113]
 layout_mode = 2

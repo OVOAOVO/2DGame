@@ -48,6 +48,9 @@ func _process(_delta: float) -> void:
 	match load_status:
 		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE, ResourceLoader.THREAD_LOAD_FAILED:
 			set_process(false)
+			# 加载失败时也要通知 loading_screen 清理，否则会永远黑屏
+			printerr("LevelManager: 加载场景失败: " + scene_path)
+			load_finished.emit()
 		ResourceLoader.THREAD_LOAD_LOADED:
 			loaded_resource = ResourceLoader.load_threaded_get(scene_path)
 			get_tree().change_scene_to_packed(loaded_resource)
