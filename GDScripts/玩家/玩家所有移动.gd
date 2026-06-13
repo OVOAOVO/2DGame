@@ -13,7 +13,7 @@ var curfacing := 1
 
 var knockback := Vector2.ZERO
 var knock_time := 0.0
-@onready var voice = $Model
+#@onready var voice = $Model
 
 func _on_knockback(dir: Vector2, force: float):
 	knockback = dir * force
@@ -24,7 +24,7 @@ func _ready():
 	stats = SaveManager.save.player_stats
 	print("玩家加载成功，血量: ", stats.health, "/", stats.current_max_health)
 	attack_box.owner_stats = stats
-	voice.voice_command.connect(on_voice_command)
+	#voice.voice_command.connect(on_voice_command)
 
 func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
@@ -57,10 +57,10 @@ func _physics_process(delta):
 	)
 
 ## 语音指令回调 —— 由语音交互组件连接到此方法
-func on_voice_command(text: String):
-	if "跳" in text:
-		if is_on_floor():
-			velocity.y = JUMP_VELOCITY
-			print("🏃 语音跳跃！")
-	if "攻击" in text:
-		print("⚔️ 语音攻击！")
+#func on_voice_command(text: String):
+	#if "跳" in text:
+		#if is_on_floor():
+			#velocity.y = JUMP_VELOCITY
+			#print("🏃 语音跳跃！")
+	#if "攻击" in text:
+		#print("⚔️ 语音攻击！")
