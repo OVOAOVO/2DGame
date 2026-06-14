@@ -4,10 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="3_yxub4"]
 [ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="4_s0p5p"]
 [ext_resource type="PackedScene" uid="uid://tixvvhxlonyt" path="res://Prefab/TileMaps/棕地面.tscn" id="4_yxub4"]
+[ext_resource type="PackedScene" uid="uid://cwppilgl4xlc4" path="res://Prefab/敌人/尖头小绿怪.tscn" id="5_s0p5p"]
 
 [sub_resource type="Resource" id="Resource_4qii7"]
 resource_local_to_scene = true
 script = ExtResource("4_s0p5p")
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
+
+[sub_resource type="Resource" id="Resource_b8fj4"]
+resource_local_to_scene = true
+script = ExtResource("4_s0p5p")
+base_defense = 5
+base_attack = 5
 metadata/_custom_type_script = "uid://77u6ecdir8o5"
 
 [node name="关卡2" type="Node2D" unique_id=1542376960]
@@ -21,3 +29,9 @@ load_scene = &"uid://bhaem6iuvyq5h"
 [node name="Player" parent="." unique_id=538243393 groups=["Player"] instance=ExtResource("3_yxub4")]
 position = Vector2(107.99999, 633.99994)
 stats = SubResource("Resource_4qii7")
+
+[node name="Enemy" type="Node2D" parent="." unique_id=775816172]
+
+[node name="尖头小绿怪" parent="Enemy" unique_id=1236540782 instance=ExtResource("5_s0p5p")]
+position = Vector2(379.00003, 424)
+stats = SubResource("Resource_b8fj4")

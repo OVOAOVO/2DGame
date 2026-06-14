@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0vmmarjsdfga" path="res://Prefab/UI/GameUI/healthBar.tscn" id="5_t3s7t"]
 
 [sub_resource type="Resource" id="Resource_t3s7t"]
+resource_local_to_scene = true
 script = ExtResource("2_k3tch")
 base_max_health = 75
 base_defense = 5
