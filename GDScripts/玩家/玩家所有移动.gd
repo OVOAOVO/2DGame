@@ -55,12 +55,3 @@ func _physics_process(delta):
 		velocity.y > 0 and not is_on_floor(),
 		direction
 	)
-
-## 语音指令回调 —— 由语音交互组件连接到此方法
-#func on_voice_command(text: String):
-	#if "跳" in text:
-		#if is_on_floor():
-			#velocity.y = JUMP_VELOCITY
-			#print("🏃 语音跳跃！")
-	#if "攻击" in text:
-		#print("⚔️ 语音攻击！")
