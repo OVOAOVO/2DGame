@@ -347,8 +347,6 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_78025")
 animation = &"Attack"
 autoplay = "Idle"
-frame = 8
-frame_progress = 1.0
 script = ExtResource("6_csbx2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392394083]
@@ -371,6 +369,13 @@ debug_color = Color(0, 1, 0, 0.41960785)
 [node name="AttackBox" type="Area2D" parent="." unique_id=435401870]
 position = Vector2(9, 1.5)
 script = ExtResource("11_p6q0w")
+attack_config = {
+"attack_1": {
+"frame_to_shape": {
+4: NodePath("CollisionShape2D")
+}
+}
+}
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=2072812651]
