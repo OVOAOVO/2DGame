@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://y14gododukis" path="res://Prefab/TileMaps/草地面.tscn" id="3_2rln6"]
 [ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="3_8h8fo"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="4_8h8fo"]
-[ext_resource type="PackedScene" uid="uid://oid5gyah2wbn" path="res://Prefab/敌人/蜗牛.tscn" id="6_2rln6"]
+[ext_resource type="PackedScene" uid="uid://oid5gyah2wbn" path="res://Prefab/敌人/蜗牛/蜗牛.tscn" id="6_2rln6"]
 [ext_resource type="Resource" uid="uid://djfnhvms6056p" path="res://Prefab/玩家属性.tres" id="6_8h8fo"]
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="6_kys31"]
 

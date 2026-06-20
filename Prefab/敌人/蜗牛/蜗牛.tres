@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Stats" format=3 uid="uid://crgfo1jagyvrq"]
+
+[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="1_yeys4"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_yeys4")
+base_max_health = 75
+base_defense = 5
+base_attack = 5
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
