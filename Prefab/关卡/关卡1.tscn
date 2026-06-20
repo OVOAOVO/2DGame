@@ -2,8 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://y14gododukis" path="res://Prefab/TileMaps/草地面.tscn" id="3_2rln6"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="4_8h8fo"]
+[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="4_8oahv"]
 [ext_resource type="PackedScene" uid="uid://oid5gyah2wbn" path="res://Prefab/敌人/蜗牛/蜗牛.tscn" id="6_2rln6"]
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="6_kys31"]
+
+[sub_resource type="Resource" id="Resource_8oahv"]
+resource_local_to_scene = true
+script = ExtResource("4_8oahv")
+base_max_health = 75
+base_defense = 5
+base_attack = 5
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
+
+[sub_resource type="Resource" id="Resource_2rln6"]
+resource_local_to_scene = true
+script = ExtResource("4_8oahv")
+base_max_health = 75
+base_defense = 5
+base_attack = 5
+metadata/_custom_type_script = "uid://77u6ecdir8o5"
 
 [node name="关卡1" type="Node2D" unique_id=1542376960]
 
@@ -19,10 +36,12 @@ load_scene = &"uid://bmbth1rc7pmut"
 
 [node name="蜗牛" parent="Enemies" unique_id=1714253583 instance=ExtResource("6_2rln6")]
 position = Vector2(402.00003, 645)
+stats = SubResource("Resource_8oahv")
 face_right = false
 
 [node name="蜗牛2" parent="Enemies" unique_id=308082738 instance=ExtResource("6_2rln6")]
 position = Vector2(830, 644)
+stats = SubResource("Resource_2rln6")
 face_right = false
 
 [node name="Player" parent="." unique_id=538243393 instance=ExtResource("6_kys31")]
