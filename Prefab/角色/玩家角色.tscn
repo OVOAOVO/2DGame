@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2uya3qr2qn0f"]
 
-[ext_resource type="Script" uid="uid://bmos3pw0xkf34" path="res://GDScripts/玩家/玩家所有移动.gd" id="1_nfgnx"]
+[ext_resource type="Script" uid="uid://bmos3pw0xkf34" path="res://GDScripts/玩家/玩家.gd" id="1_nfgnx"]
 [ext_resource type="Texture2D" uid="uid://d0fgk3fhyal7f" path="res://Assets/images/Pink Man/Fall (32x32).png" id="1_qvoa7"]
 [ext_resource type="Texture2D" uid="uid://v1kmxdsi3t81" path="res://Assets/images/Pink Man/Idle (32x32).png" id="1_uyb8x"]
 [ext_resource type="Texture2D" uid="uid://bpno8fomi8j38" path="res://Assets/images/LDJ/攻击动画/attack(32×32）.png" id="2_a6oc6"]

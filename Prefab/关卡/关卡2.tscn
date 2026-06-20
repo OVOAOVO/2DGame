@@ -27,5 +27,5 @@ position = Vector2(107.99999, 633.99994)
 [node name="Enemy" type="Node2D" parent="." unique_id=775816172]
 
 [node name="尖头小绿怪" parent="Enemy" unique_id=1236540782 instance=ExtResource("5_s0p5p")]
-position = Vector2(379.00003, 424)
+position = Vector2(1017.0001, 629)
 stats = SubResource("Resource_s0p5p")

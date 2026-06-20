@@ -13,7 +13,6 @@ var curfacing := 1
 
 var knockback := Vector2.ZERO
 var knock_time := 0.0
-#@onready var voice = $Model
 
 func _on_knockback(dir: Vector2, force: float):
 	knockback = dir * force
@@ -24,7 +23,6 @@ func _ready():
 	stats = SaveManager.save.player_stats
 	print("玩家加载成功，血量: ", stats.health, "/", stats.current_max_health)
 	attack_box.owner_stats = stats
-	#voice.voice_command.connect(on_voice_command)
 
 func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")

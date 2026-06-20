@@ -5,7 +5,6 @@ enum State {
 	HIT
 }
 
-@onready var timer: Timer = $Timer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var state = State.MOVE
@@ -31,7 +30,6 @@ func _on_hitted(damage, force, hit_pos):
 		return
 
 	state = State.HIT
-	timer.paused = true
 	animated_sprite_2d.speed_scale = 0
 
 
@@ -75,4 +73,3 @@ func _on_hitted(damage, force, hit_pos):
 
 	state = State.MOVE
 	animated_sprite_2d.speed_scale = 1
-	timer.paused = false
