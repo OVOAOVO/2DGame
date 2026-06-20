@@ -1,6 +1,10 @@
 # SaveManager.gd (Autoload)
 extends Node
 
+## 玩家属性的模板 .tres（创建新存档时从此复制 base_* 初始值）
+## preload 确保导出时资源被打包，玩家首次运行即可使用
+const STATS_TEMPLATE := preload("res://Prefab/玩家属性.tres")
+
 var save: SaveGameAsResource
 var has_save: bool = false  ## 用来显示隐藏菜单
 
@@ -11,17 +15,21 @@ func _enter_tree():
 	init()
 	
 func init():
-	# 有存档 覆盖
+	# 有存档 → 直接加载
 	if SaveGameAsResource.save_exists():
 		save = SaveGameAsResource.load_savegame()
 		has_save = true
-	# 没有存档 创建一个默认存档
+	# 没有存档 → 从模板创建新存档
 	else:
 		save = SaveGameAsResource.new()
 		has_save = false
+
+		#.tres 模板复制所有 base_* 属性，你的数值调整在这一个文件里生效
+		save.player_stats.copy_base_from(STATS_TEMPLATE)
+
 		save.inventory.add_item("healing_gem", 5)
 		save.inventory.add_item("sword", 1)
-		save.player_stats.setup_stats() # 初始初始化
+		save.player_stats.setup_stats() # 用 base_* 重算 current_* 并满血
 		save.write_savegame()
 
 	save_loaded.emit()

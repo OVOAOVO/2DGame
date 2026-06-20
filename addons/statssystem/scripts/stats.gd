@@ -49,6 +49,14 @@ func remove_buff(buff: StatBuff) -> void:
 	recalculate_stats.call_deferred()
 
 
+func copy_base_from(other: Stats) -> void:
+	"""从另一个 Stats 资源复制所有基础属性值（base_* 和 experience）"""
+	base_max_health = other.base_max_health
+	base_defense = other.base_defense
+	base_attack = other.base_attack
+	experience = other.experience
+
+
 func recalculate_stats() -> void:
 	var stat_multipliers: Dictionary = {}
 	var stat_addends: Dictionary = {}
