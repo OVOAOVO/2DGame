@@ -18,12 +18,14 @@ func tick(actor: Node, blackboard: Blackboard) -> int:
 	var should_turn = false
 	
 	if ray_wall is RayCast2D:
+		ray_wall.position.x = abs(ray_wall.position.x) * direction
 		ray_wall.target_position.x = abs(ray_wall.target_position.x) * direction
 		ray_wall.force_raycast_update()
 		if ray_wall.is_colliding():
 			should_turn = true
 	
 	if ray_edge is RayCast2D:
+		ray_edge.position.x = abs(ray_edge.position.x) * direction
 		ray_edge.target_position.x = abs(ray_edge.target_position.x) * direction
 		ray_edge.force_raycast_update()
 		if not ray_edge.is_colliding():

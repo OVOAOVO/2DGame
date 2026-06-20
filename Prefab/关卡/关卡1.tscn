@@ -35,14 +35,12 @@ load_scene = &"uid://bmbth1rc7pmut"
 [node name="Enemies" type="Node2D" parent="." unique_id=1175826991]
 
 [node name="蜗牛" parent="Enemies" unique_id=1714253583 instance=ExtResource("6_2rln6")]
-position = Vector2(402.00003, 645)
+position = Vector2(607, 450)
 stats = SubResource("Resource_8oahv")
-face_right = false
 
 [node name="蜗牛2" parent="Enemies" unique_id=308082738 instance=ExtResource("6_2rln6")]
 position = Vector2(830, 644)
 stats = SubResource("Resource_2rln6")
-face_right = false
 
 [node name="Player" parent="." unique_id=538243393 instance=ExtResource("6_kys31")]
 position = Vector2(77.000015, 616)

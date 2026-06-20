@@ -79,12 +79,12 @@ stats = SubResource("Resource_1ctis")
 
 [node name="RayCastWall" type="RayCast2D" parent="." unique_id=2009968708]
 scale = Vector2(0.99999994, 0.99999994)
-target_position = Vector2(90, 0)
+target_position = Vector2(25, 0)
 
 [node name="RayCastEdge" type="RayCast2D" parent="." unique_id=1902533316]
-position = Vector2(13.2, 0)
+position = Vector2(13, 0)
 scale = Vector2(0.99999994, 0.99999994)
-target_position = Vector2(0, 30)
+target_position = Vector2(0, 25)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=449919378 groups=["Enemy"]]
 script = ExtResource("3_hjjtb")
