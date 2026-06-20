@@ -3,12 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="3_4iob6"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="3_8gsiq"]
 [ext_resource type="PackedScene" uid="uid://cab1a7b0uqwbd" path="res://Prefab/TileMaps/奶昔地面.tscn" id="4_4iob6"]
-[ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="4_dujvp"]
-
-[sub_resource type="Resource" id="Resource_4iob6"]
-resource_local_to_scene = true
-script = ExtResource("4_dujvp")
-metadata/_custom_type_script = "uid://77u6ecdir8o5"
 
 [node name="关卡3" type="Node2D" unique_id=1340482594]
 
@@ -20,4 +14,3 @@ load_scene = &"uid://c51a7fe6kgkky"
 
 [node name="Player" parent="." unique_id=538243393 groups=["Player"] instance=ExtResource("3_4iob6")]
 position = Vector2(123.99999, 610.99994)
-stats = SubResource("Resource_4iob6")

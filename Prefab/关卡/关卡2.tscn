@@ -9,11 +9,6 @@
 [sub_resource type="Resource" id="Resource_s0p5p"]
 resource_local_to_scene = true
 script = ExtResource("4_s0p5p")
-metadata/_custom_type_script = "uid://77u6ecdir8o5"
-
-[sub_resource type="Resource" id="Resource_4qii7"]
-resource_local_to_scene = true
-script = ExtResource("4_s0p5p")
 base_defense = 5
 base_attack = 5
 metadata/_custom_type_script = "uid://77u6ecdir8o5"
@@ -28,10 +23,9 @@ load_scene = &"uid://bhaem6iuvyq5h"
 
 [node name="Player" parent="." unique_id=538243393 groups=["Player"] instance=ExtResource("3_yxub4")]
 position = Vector2(107.99999, 633.99994)
-stats = SubResource("Resource_s0p5p")
 
 [node name="Enemy" type="Node2D" parent="." unique_id=775816172]
 
 [node name="尖头小绿怪" parent="Enemy" unique_id=1236540782 instance=ExtResource("5_s0p5p")]
 position = Vector2(379.00003, 424)
-stats = SubResource("Resource_4qii7")
+stats = SubResource("Resource_s0p5p")

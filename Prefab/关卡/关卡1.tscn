@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="3_8h8fo"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="4_8h8fo"]
 [ext_resource type="PackedScene" uid="uid://oid5gyah2wbn" path="res://Prefab/敌人/蜗牛/蜗牛.tscn" id="6_2rln6"]
-[ext_resource type="Resource" uid="uid://djfnhvms6056p" path="res://Prefab/玩家属性.tres" id="6_8h8fo"]
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="6_kys31"]
 
 [sub_resource type="Resource" id="Resource_8oahv"]
@@ -47,4 +46,3 @@ face_right = false
 
 [node name="Player" parent="." unique_id=538243393 instance=ExtResource("6_kys31")]
 position = Vector2(77.000015, 616)
-stats = ExtResource("6_8h8fo")
