@@ -12,5 +12,5 @@
 position = Vector2(438, 88)
 load_scene = &"uid://c51a7fe6kgkky"
 
-[node name="Player" parent="." unique_id=538243393 groups=["Player"] instance=ExtResource("3_4iob6")]
+[node name="Player" parent="." unique_id=538243393 instance=ExtResource("3_4iob6")]
 position = Vector2(123.99999, 610.99994)
