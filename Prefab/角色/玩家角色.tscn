@@ -334,6 +334,7 @@ size = Vector2(11.050003, 10.000002)
 
 [node name="Player" type="CharacterBody2D" unique_id=538243393]
 scale = Vector2(5, 5)
+collision_layer = 2
 script = ExtResource("1_nfgnx")
 stats = ExtResource("2_tynam")
 

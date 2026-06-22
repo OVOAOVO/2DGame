@@ -70,6 +70,11 @@ menu={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="World"
+2d_render/layer_2="Player"
+
 [level_manager]
 
 loading_screen_path="uid://bst8sbtsobjs3"
