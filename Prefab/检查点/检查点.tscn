@@ -89,6 +89,7 @@ script = ExtResource("2_nm2ul")
 area = NodePath("检查点")
 
 [node name="检查点" type="Area2D" parent="." unique_id=1450161505]
+collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="检查点" unique_id=1861835675]
 scale = Vector2(2, 2)
