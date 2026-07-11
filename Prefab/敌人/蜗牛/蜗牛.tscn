@@ -109,6 +109,11 @@ script = ExtResource("1_cvjj1")
 stats = SubResource("Resource_wpvkw")
 face_right = false
 
+[node name="RayCastEye" type="RayCast2D" parent="." unique_id=1596686503]
+scale = Vector2(0.9999998, 0.9999998)
+target_position = Vector2(-90, 0)
+collision_mask = 2
+
 [node name="RayCastWall" type="RayCast2D" parent="." unique_id=757371790]
 position = Vector2(0, -0.4)
 scale = Vector2(0.9999998, 0.9999998)

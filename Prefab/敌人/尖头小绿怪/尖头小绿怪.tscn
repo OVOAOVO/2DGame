@@ -77,6 +77,11 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_k3g4t")
 stats = SubResource("Resource_1ctis")
 
+[node name="RayCastEye" type="RayCast2D" parent="." unique_id=701349400]
+scale = Vector2(0.99999994, 0.99999994)
+target_position = Vector2(90, 0)
+collision_mask = 2
+
 [node name="RayCastWall" type="RayCast2D" parent="." unique_id=2009968708]
 scale = Vector2(0.99999994, 0.99999994)
 target_position = Vector2(25, 0)

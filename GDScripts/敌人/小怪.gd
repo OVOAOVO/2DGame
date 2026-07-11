@@ -21,6 +21,7 @@ func _ready() -> void:
 	# 把巡逻需要的节点引用一次性存入黑板，避免行为树每帧 get_node_or_null
 	blackboard.set_value("ray_wall", get_node_or_null("RayCastWall"))
 	blackboard.set_value("ray_edge", get_node_or_null("RayCastEdge"))
+	blackboard.set_value("ray_eye", get_node_or_null("RayCastEye"))
 	blackboard.set_value("sprite", animated_sprite_2d)
 	
 	# 设置初始方向（正=右，负=左），与 face_right 一致
