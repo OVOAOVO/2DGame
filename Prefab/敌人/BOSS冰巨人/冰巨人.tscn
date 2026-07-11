@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cx3te3kahuyoy" path="res://Assets/images/BOSS/IceGiant/death/death_1.png" id="1_k7k4n"]
 [ext_resource type="Texture2D" uid="uid://cl75twl0ek67b" path="res://Assets/images/BOSS/IceGiant/1_atk/1_atk_1.png" id="1_k12qg"]
+[ext_resource type="Script" uid="uid://dlqhl6a1852bi" path="res://GDScripts/敌人/Boss收击与碰撞.gd" id="1_u0n57"]
 [ext_resource type="Texture2D" uid="uid://x2wjya17e2uj" path="res://Assets/images/BOSS/IceGiant/death/death_2.png" id="2_rqgao"]
 [ext_resource type="Texture2D" uid="uid://bbrlvf4pyulu0" path="res://Assets/images/BOSS/IceGiant/1_atk/1_atk_2.png" id="2_sl448"]
 [ext_resource type="Texture2D" uid="uid://keisol3c5la7" path="res://Assets/images/BOSS/IceGiant/death/death_3.png" id="3_ae48r"]
@@ -251,7 +252,9 @@ animations = [{
 
 [node name="冰巨人" type="Node2D" unique_id=1653837628]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1574886663]
+[node name="Area2D" type="Area2D" parent="." unique_id=1574886663 groups=["Enemy"]]
+collision_mask = 2
+script = ExtResource("1_u0n57")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1002682725]
 sprite_frames = SubResource("SpriteFrames_1qxmb")

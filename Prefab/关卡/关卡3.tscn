@@ -17,5 +17,5 @@ load_scene = &"uid://c51a7fe6kgkky"
 position = Vector2(123.99999, 610.99994)
 
 [node name="冰巨人" parent="." unique_id=1653837628 instance=ExtResource("4_dujvp")]
-position = Vector2(1105, 575.00006)
+position = Vector2(1104, 575)
 scale = Vector2(1.9393382, 1.9393382)
