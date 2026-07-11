@@ -258,7 +258,7 @@ script = ExtResource("1_l1bx1")
 stats = ExtResource("2_vhwib")
 
 [node name="RayCastEye" type="RayCast2D" parent="." unique_id=1690820189]
-target_position = Vector2(-98, 37)
+target_position = Vector2(-85, 39)
 collision_mask = 2
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1574886663 groups=["Enemy"]]
@@ -274,7 +274,6 @@ autoplay = "Idle"
 script = ExtResource("54_yjery")
 sprite_path = NodePath("../AnimatedSprite2D")
 epsilon = 3.5
-colinear_tolerance = null
 scale_down = 0.5
 
 [node name="FrameCollisionSync" type="Node" parent="Area2D" unique_id=300593409]
@@ -285,7 +284,6 @@ debug_print = false
 [node name="Attack_frame0" type="CollisionPolygon2D" parent="Area2D" unique_id=1086411672]
 visible = false
 polygon = PackedVector2Array(-2, -38, -22, -24, -26, -24, -38, -2, -40, -2, -28, 16, -28, 20, -20, 16, -16, 16, -18, 42, -18, 46, -8, 44, -6, 44, -6, 24, -6, 22, 8, 24, 10, 24, 10, 46, 22, 46, 38, 8, 40, 8, 32, -18, 32, -22, 16, -36, 16, -38, 8, -34, 8, -44, 4, -32, 2, -32, -2, -46)
-disabled = true
 
 [node name="Attack_frame1" type="CollisionPolygon2D" parent="Area2D" unique_id=1927781762]
 visible = false
@@ -571,6 +569,7 @@ metadata/_custom_type_script = "uid://cbnbvj8prv63i"
 
 [node name="Boss攻击" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=673535051]
 script = ExtResource("64_vhwib")
+attack_knock_force = null
 metadata/_custom_type_script = "uid://cv74jjdrwevpr"
 
 [node name="Boss走向玩家" type="Node" parent="BeehaveTree/SelectorComposite" unique_id=2051428547]

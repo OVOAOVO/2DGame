@@ -28,19 +28,19 @@ func _on_area_entered(area):
 		var damage: int = area.get_meta("damage", 10)
 		var knock_force: float = area.get_meta("knock_force", 100.0)
 		var hit_pos: Vector2 = area.global_position
-		#print("[Boss] 伤害:%d  击退力:%.1f  命中位置:%s" % [damage, knock_force, hit_pos])
+		print("[Boss] 伤害:%d  击退力:%.1f  命中位置:%s" % [damage, knock_force, hit_pos])
 		hitted.emit(damage, knock_force, hit_pos)
 
 
 func _on_hitted(damage, force, hit_pos):
-	#print("[Boss] _on_hitted 触发! damage:%d force:%.1f" % [damage, force])
+	print("[Boss] _on_hitted 触发! damage:%d force:%.1f" % [damage, force])
 
 	# 计算伤害
 	var old_health = get_parent().stats.health
 	var final_damage = max(1, damage - get_parent().stats.current_defense)
 	get_parent().stats.health -= final_damage
 	var new_health = get_parent().stats.health
-	#print("[Boss] 受到伤害: ", final_damage, " | HP: ", old_health, " -> ", new_health)
+	print("[Boss] 受到伤害: ", final_damage, " | HP: ", old_health, " -> ", new_health)
 
 	# 死亡判断
 	if get_parent().stats.health <= 0:

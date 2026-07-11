@@ -11,8 +11,18 @@ func _ready() -> void:
 
 func _on_area_entered(area):
 	if area.is_in_group("Enemy"):
-		print("Enemy碰到玩家了")
-		emit_signal("touch_enemy")
-		# 新信号（击退）
-		var dir = (global_position - area.global_position).normalized()
-		emit_signal("hit_knockback", dir, knock_force)
+		_do_knockback(area.global_position, knock_force)
+
+
+## 外部调用：从指定位置击退玩家
+func apply_knockback(from_pos: Vector2, force: float = 0.0) -> void:
+	if force <= 0.0:
+		force = knock_force
+	_do_knockback(from_pos, force)
+
+
+func _do_knockback(from_pos: Vector2, force: float) -> void:
+	print("Enemy碰到玩家了")
+	emit_signal("touch_enemy")
+	var dir = (global_position - from_pos).normalized()
+	emit_signal("hit_knockback", dir, force)
