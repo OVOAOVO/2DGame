@@ -181,6 +181,7 @@ metadata/_custom_type_script = "uid://cbnbvj8prv63i"
 
 [node name="追逐玩家" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=1006008214]
 script = ExtResource("12_40q7a")
+speed = 250.0
 metadata/_custom_type_script = "uid://cv74jjdrwevpr"
 
 [node name="巡逻" type="Node" parent="BeehaveTree/SelectorComposite" unique_id=1759277931]
