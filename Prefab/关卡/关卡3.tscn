@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2uya3qr2qn0f" path="res://Prefab/角色/玩家角色.tscn" id="3_4iob6"]
 [ext_resource type="PackedScene" uid="uid://y22b5dvyhc3b" path="res://Prefab/检查点/检查点.tscn" id="3_8gsiq"]
 [ext_resource type="PackedScene" uid="uid://cab1a7b0uqwbd" path="res://Prefab/TileMaps/奶昔地面.tscn" id="4_4iob6"]
+[ext_resource type="PackedScene" uid="uid://bcqo371hg7bvl" path="res://Prefab/敌人/BOSS冰巨人/冰巨人.tscn" id="4_dujvp"]
 
 [node name="关卡3" type="Node2D" unique_id=1340482594]
 
@@ -14,3 +15,7 @@ load_scene = &"uid://c51a7fe6kgkky"
 
 [node name="Player" parent="." unique_id=538243393 instance=ExtResource("3_4iob6")]
 position = Vector2(123.99999, 610.99994)
+
+[node name="冰巨人" parent="." unique_id=1653837628 instance=ExtResource("4_dujvp")]
+position = Vector2(1105, 575.00006)
+scale = Vector2(1.9393382, 1.9393382)

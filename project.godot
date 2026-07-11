@@ -38,7 +38,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/InventorySystem/plugin.cfg", "res://addons/LevelManeger/plugin.cfg", "res://addons/StatsSystem/plugin.cfg", "res://addons/beehave/plugin.cfg")
+enabled=PackedStringArray("res://addons/InventorySystem/plugin.cfg", "res://addons/LevelManeger/plugin.cfg", "res://addons/StatsSystem/plugin.cfg", "res://addons/beehave/plugin.cfg", "res://addons/collisiongen/plugin.cfg")
 
 [input]
 
