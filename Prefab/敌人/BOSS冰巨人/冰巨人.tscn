@@ -62,6 +62,8 @@
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="55_yj3fr"]
 [ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="56_as6ag"]
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="57_bl76i"]
+[ext_resource type="Script" uid="uid://b7d7trx66dnb6" path="res://GDScripts/GameUI/link_UI_stats.gd" id="59_c3h06"]
+[ext_resource type="PackedScene" uid="uid://c0vmmarjsdfga" path="res://Prefab/UI/GameUI/healthBar.tscn" id="60_yxsx4"]
 [ext_resource type="Script" uid="uid://bn40mekhxfywl" path="res://GDScripts/敌人/BOSS行为/boss走向玩家.gd" id="63_klsvx"]
 [ext_resource type="Script" uid="uid://d31nr7watcydk" path="res://GDScripts/敌人/BOSS行为/boss攻击范围内.gd" id="63_l1bx1"]
 [ext_resource type="Script" uid="uid://b2xe71tjvl3cl" path="res://GDScripts/敌人/BOSS行为/boss攻击.gd" id="64_vhwib"]
@@ -282,7 +284,6 @@ animated_sprite = NodePath("../AnimatedSprite2D")
 debug_print = false
 
 [node name="Attack_frame0" type="CollisionPolygon2D" parent="Area2D" unique_id=1086411672]
-visible = false
 polygon = PackedVector2Array(-2, -38, -22, -24, -26, -24, -38, -2, -40, -2, -28, 16, -28, 20, -20, 16, -16, 16, -18, 42, -18, 46, -8, 44, -6, 44, -6, 24, -6, 22, 8, 24, 10, 24, 10, 46, 22, 46, 38, 8, 40, 8, 32, -18, 32, -22, 16, -36, 16, -38, 8, -34, 8, -44, 4, -32, 2, -32, -2, -46)
 
 [node name="Attack_frame1" type="CollisionPolygon2D" parent="Area2D" unique_id=1927781762]
@@ -545,6 +546,18 @@ visible = false
 polygon = PackedVector2Array(0, -46, -32, -16, -34, -16, -32, 2, -32, 24, -18, 26, -14, 26, -20, 38, -20, 42, -18, 44, -8, 44, -2, 24, 0, 24, 4, 46, 16, 46, 14, 32, 14, 26, 28, 18, 32, 18, 36, -4, 38, -4, 18, -36, 18, -38, 12, -34, 8, -34, 10, -44, 6, -44, 4, -34, 2, -34, 0, -48)
 disabled = true
 
+[node name="UI" type="Control" parent="." unique_id=1284627061]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("59_c3h06")
+
+[node name="HealthBar" parent="UI" unique_id=946986268 instance=ExtResource("60_yxsx4")]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -59.0
+offset_right = 44.0
+offset_bottom = -48.0
+
 [node name="Blackboard" type="Node" parent="." unique_id=1721513255]
 script = ExtResource("54_oiwdo")
 metadata/_custom_type_script = "uid://dme5f24l0edsf"
@@ -569,7 +582,6 @@ metadata/_custom_type_script = "uid://cbnbvj8prv63i"
 
 [node name="Boss攻击" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=673535051]
 script = ExtResource("64_vhwib")
-attack_knock_force = null
 metadata/_custom_type_script = "uid://cv74jjdrwevpr"
 
 [node name="Boss走向玩家" type="Node" parent="BeehaveTree/SelectorComposite" unique_id=2051428547]
