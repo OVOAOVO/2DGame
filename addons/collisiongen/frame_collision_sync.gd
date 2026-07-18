@@ -37,6 +37,7 @@ var _lookup: Dictionary = {}
 var _all_collisions: Array[CollisionPolygon2D] = []
 var _active: bool = false
 var _ready_done: bool = false
+var _flipped: bool = false
 
 
 func _ready() -> void:
@@ -45,6 +46,16 @@ func _ready() -> void:
 	rebuild()
 	if auto_start and _sprite:
 		enable()
+
+
+func _process(_delta: float) -> void:
+	"""检测 flip_h 变化（Godot 无 flip_h_changed 信号，用 _process 轮询）"""
+	if not _active or not _sprite:
+		return
+	var flipped := _is_sprite_flipped()
+	if flipped != _flipped:
+		_flipped = flipped
+		_apply_flip_to_all()
 
 
 func _exit_tree() -> void:
@@ -189,6 +200,20 @@ func _on_animation_changed() -> void:
 	_sync(_sprite.animation, _sprite.frame)
 
 
+func _is_sprite_flipped() -> bool:
+	"""检测 Sprite 是否水平翻转（兼容 AnimatedSprite2D.flip_h 和 Sprite2D.scale.x）"""
+	if _sprite is AnimatedSprite2D:
+		return _sprite.flip_h
+	return _sprite.scale.x < 0
+
+
+func _apply_flip_to_all() -> void:
+	"""将所有碰撞多边形按翻转状态镜像"""
+	var sx: float = -1.0 if _flipped else 1.0
+	for col in _all_collisions:
+		col.scale.x = sx
+
+
 func _sync(anim: StringName, frame: int) -> void:
 	for col in _all_collisions:
 		col.disabled = true
@@ -207,6 +232,10 @@ func _sync(anim: StringName, frame: int) -> void:
 			print("[FrameCollisionSync] 动画:%-16s  帧:%2d  ->  碰撞: %s" % [anim_str, frame, target.name])
 	elif debug_print:
 		print("[FrameCollisionSync] 动画:%-16s  帧:%2d  ->  [缺失] lookup 中 %s 有 %d 帧，请求第 %d 帧" % [anim_str, frame, anim_str, cols.size(), frame])
+
+	# 同步 Sprite 翻转状态到所有碰撞多边形
+	_flipped = _is_sprite_flipped()
+	_apply_flip_to_all()
 
 
 func get_configuration_warnings() -> PackedStringArray:
