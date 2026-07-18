@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d3knjyubwxgr4" path="res://Assets/images/Snail/Walk (38x24).png" id="1_idhl1"]
 [ext_resource type="Script" uid="uid://c4b0gfe3haeal" path="res://GDScripts/敌人/敌人收击与碰撞.gd" id="2_7wlmr"]
 [ext_resource type="Script" uid="uid://77u6ecdir8o5" path="res://addons/StatsSystem/scripts/stats.gd" id="2_et6py"]
+[ext_resource type="Script" uid="uid://8gmcplc6dvqx" path="res://addons/InventorySystem/Scripts/item_data.gd" id="4_nsa73"]
 [ext_resource type="Script" uid="uid://b7d7trx66dnb6" path="res://GDScripts/GameUI/link_UI_stats.gd" id="5_2bvw7"]
+[ext_resource type="Resource" uid="uid://qnfdhhy3hifr" path="res://Prefab/UI/GameUI/Inventory/items/IceGem.tres" id="5_enkio"]
 [ext_resource type="PackedScene" uid="uid://c0vmmarjsdfga" path="res://Prefab/UI/GameUI/healthBar.tscn" id="5_t3s7t"]
 [ext_resource type="Script" uid="uid://dme5f24l0edsf" path="res://addons/beehave/blackboard.gd" id="7_r4mcd"]
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="8_m3cne"]
@@ -126,6 +128,8 @@ target_position = Vector2(0, 25)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1119350810 groups=["Enemy"]]
 script = ExtResource("2_7wlmr")
+drop_items = Array[ExtResource("4_nsa73")]([ExtResource("5_enkio")])
+drop_scale = Vector2(0.5, 0.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=229735696]
 scale = Vector2(0.99999994, 0.99999994)

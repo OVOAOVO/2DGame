@@ -5,6 +5,11 @@ enum State {
 	HIT
 }
 
+## 死亡时掉落的物品列表（在 Inspector 里拖入 .tres 物品资源）
+@export var drop_items: Array[ItemData] = []
+## 掉落物图标缩放（每个敌人独立设置）
+@export var drop_scale := Vector2(2, 2)
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var state = State.MOVE
@@ -18,7 +23,7 @@ func _ready() -> void:
 
 	# 另一个 Area2D 碰撞（比如攻击盒）
 	# area_entered.connect(_on_area_entered)
-	
+
 	hitted.connect(_on_hitted)
 
 func _on_body_entered(body):
@@ -53,6 +58,10 @@ func _on_hitted(damage, force, hit_pos):
 
 	# 死亡判断
 	if get_parent().stats.health <= 0:
+		# 掉落物品（.tres → 自动生成世界掉落物 + 拾取后进背包）
+		for data in drop_items:
+			DropManager.drop_item(data, get_parent().global_position, drop_scale)
+
 		# 临时测试:直接给玩家加经验
 		var player_stats = SaveManager.save.player_stats
 		player_stats.experience += 1000

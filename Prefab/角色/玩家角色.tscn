@@ -332,7 +332,7 @@ size = Vector2(11.000002, 10.000002)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6oc6"]
 size = Vector2(11.050003, 10.000002)
 
-[node name="Player" type="CharacterBody2D" unique_id=538243393]
+[node name="Player" type="CharacterBody2D" unique_id=538243393 groups=["Player"]]
 scale = Vector2(5, 5)
 collision_layer = 2
 script = ExtResource("1_nfgnx")

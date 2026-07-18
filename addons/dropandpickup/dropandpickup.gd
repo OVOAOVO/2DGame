@@ -3,20 +3,16 @@ extends EditorPlugin
 
 
 func _enable_plugin() -> void:
-	# Add autoloads here.
-	pass
+	add_autoload_singleton("DropManager", "res://addons/dropandpickup/drop_manager.gd")
 
 
 func _disable_plugin() -> void:
-	# Remove autoloads here.
-	pass
+	remove_autoload_singleton("DropManager")
 
 
 func _enter_tree() -> void:
-	# Initialization of the plugin goes here.
 	pass
 
 
 func _exit_tree() -> void:
-	# Clean-up of the plugin goes here.
 	pass
