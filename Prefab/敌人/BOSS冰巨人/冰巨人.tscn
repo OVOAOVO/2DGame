@@ -64,6 +64,7 @@
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="57_bl76i"]
 [ext_resource type="Script" uid="uid://b7d7trx66dnb6" path="res://GDScripts/GameUI/link_UI_stats.gd" id="59_c3h06"]
 [ext_resource type="PackedScene" uid="uid://c0vmmarjsdfga" path="res://Prefab/UI/GameUI/healthBar.tscn" id="60_yxsx4"]
+[ext_resource type="Script" uid="uid://00vwe3byjx01" path="res://GDScripts/敌人/boss_health_bar.gd" id="61_yxsx4"]
 [ext_resource type="Script" uid="uid://bn40mekhxfywl" path="res://GDScripts/敌人/BOSS行为/boss走向玩家.gd" id="63_klsvx"]
 [ext_resource type="Script" uid="uid://d31nr7watcydk" path="res://GDScripts/敌人/BOSS行为/boss攻击范围内.gd" id="63_l1bx1"]
 [ext_resource type="Script" uid="uid://b2xe71tjvl3cl" path="res://GDScripts/敌人/BOSS行为/boss攻击.gd" id="64_vhwib"]
@@ -557,6 +558,7 @@ offset_left = -44.0
 offset_top = -59.0
 offset_right = 44.0
 offset_bottom = -48.0
+script = ExtResource("61_yxsx4")
 
 [node name="Blackboard" type="Node" parent="." unique_id=1721513255]
 script = ExtResource("54_oiwdo")
